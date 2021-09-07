@@ -4,3 +4,15 @@
     display: flex;
     flex-direction: row;
 }
+
+.side-bar {
+    display: none;
+    a {
+        text-decoration: none;
+    }
+    @media (min-width: map-get($grid-breakpoints, "md" )) {
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+    }
+}
