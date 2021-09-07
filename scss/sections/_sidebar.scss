@@ -1,1 +1,6 @@
 @use '../custom' as *;
+
+.page-container {
+    display: flex;
+    flex-direction: row;
+}
