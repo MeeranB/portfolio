@@ -82,9 +82,40 @@
   }
 }
 
-main {
-  padding: 0px 10px;
+.hero-image {
+  color: white;
+  text-align: center;
 }
+
+.hero-text--title {
+  letter-spacing: 2px;
+  font-size: 2rem;
+}
+@media (min-width: 768px) {
+  .hero-text--title {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 992px) {
+  .hero-text--title {
+    font-size: 3rem;
+  }
+}
+.hero-text--subtitle {
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .hero-text--subtitle {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 992px) {
+  .hero-text--subtitle {
+    font-size: 1.5rem;
+  }
+}
+
 @media (min-width: 768px) {
   main {
     margin-left: 200px;
@@ -101,6 +132,7 @@ main {
   flex-direction: column;
   position: fixed;
   height: 100%;
+  overflow-y: hidden;
   z-index: 1;
   top: 0;
   background-color: #111;
@@ -149,6 +181,18 @@ main {
   .sidebar__logo {
     margin-bottom: 30px;
   }
+}
+
+.hero-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../assets/images/hero.jpeg);
+  background-size: cover;
+  background-position: center;
 }
 
 /*!
