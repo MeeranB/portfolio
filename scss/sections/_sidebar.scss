@@ -15,7 +15,7 @@ main {
     top: 0;
     background-color: #111;
     overflow-x: hidden;
-    a {
+    &__link, &__logo {
         text-decoration: none;
     }
     @media (min-width: map-get($grid-breakpoints, "md" )) {
@@ -30,5 +30,8 @@ main {
             font-size: 50px;
             padding: 6px 8px;
         }
+    }
+    span[class^="icon-"] {
+
     }
 }

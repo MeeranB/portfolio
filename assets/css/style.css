@@ -1,27 +1,20 @@
 @charset "UTF-8";
-
 @font-face {
-  font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot?ot8kta');
-  src:  url('../fonts/icomoon.eot?ot8kta#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?ot8kta') format('truetype'),
-    url('../fonts/icomoon.woff?ot8kta') format('woff'),
-    url('../fonts/icomoon.svg?ot8kta#icomoon') format('svg');
+  font-family: "icomoon";
+  src: url("../../assets/fonts/icomoon.eot?ot8kta");
+  src: url("../../assets/fonts/icomoon.eot?ot8kta#iefix") format("embedded-opentype"), url("../../assets/fonts/icomoon.ttf?ot8kta") format("truetype"), url("../../assets/fonts/icomoon.woff?ot8kta") format("woff"), url("../../assets/fonts/icomoon.svg?ot8kta#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
-
-[class^="icon-"], [class*=" icon-"] {
+[class^=icon-], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: never;
+  font-family: "icomoon" !important;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -31,30 +24,39 @@
   content: "\e900";
   color: #5fcf80;
 }
+
 .icon-cheveron-up:before {
   content: "\e901";
 }
+
 .icon-cheveron-down:before {
   content: "\e902";
 }
+
 .icon-github:before {
   content: "\e903";
 }
+
 .icon-brand:before {
   content: "\e903";
 }
+
 .icon-octacat:before {
   content: "\e903";
 }
+
 .icon-social:before {
   content: "\e903";
 }
+
 .icon-linkedin:before {
   content: "\e904";
 }
+
 .icon-brand1:before {
   content: "\e904";
 }
+
 .icon-social1:before {
   content: "\e904";
 }
@@ -77,7 +79,7 @@ main {
   background-color: #111;
   overflow-x: hidden;
 }
-.sidebar a {
+.sidebar__link, .sidebar__logo {
   text-decoration: none;
 }
 @media (min-width: 768px) {
@@ -95,7 +97,6 @@ main {
     padding: 6px 8px;
   }
 }
-
 /*!
  * Bootstrap v5.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
