@@ -5,10 +5,14 @@ main {
     @media (min-width: map-get($grid-breakpoints, "md" )) {
         margin-left: 200px;
     }
+    @media (min-width: map-get($grid-breakpoints, "lg")) {
+        margin-left: 300px;
+    }
 }
 
 .sidebar {
     display: none;
+    flex-direction: column;
     position: fixed;
     height: 100%;
     z-index: 1;
@@ -31,14 +35,13 @@ main {
         min-width: 200px;
         padding-top: 20px;
         display: flex;
-        flex-direction: column;
         &__linkcontainer {
             padding: 20px 0px;
             border-top: 3px solid blue;
             border-bottom: 3px solid blue;
         }
         &__link {
-            padding: 6px 8px 6px 16px;
+            padding: 10px 8px 10px 16px;
         }
         &__logo {
             padding: 6px 8px;
@@ -49,4 +52,13 @@ main {
             width: 75%;
         }
     }
+    @media (min-width: map-get($grid-breakpoints, "lg")) {
+        min-width: 300px;
+        padding-top: 30px;
+        &__logo {
+            margin-bottom: 30px;
+        }
+    }
 }
+
+//TODO: CREATE LARGER SIDE-BAR VERSION.
