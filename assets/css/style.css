@@ -61,6 +61,16 @@
   content: "\e904";
 }
 
+@media (min-width: 768px) {
+  .sidebar__logo {
+    font-size: 3rem;
+  }
+  .sidebar span[class^=icon-] {
+    font-size: 2rem;
+    color: white;
+  }
+}
+
 main {
   padding: 0px 10px;
 }
@@ -79,8 +89,17 @@ main {
   background-color: #111;
   overflow-x: hidden;
 }
+.sidebar__linkcontainer {
+  display: flex;
+  flex-direction: column;
+}
 .sidebar__link, .sidebar__logo {
   text-decoration: none;
+}
+.sidebar__icons {
+  align-self: center;
+  display: flex;
+  justify-content: space-around;
 }
 @media (min-width: 768px) {
   .sidebar {
@@ -89,14 +108,24 @@ main {
     display: flex;
     flex-direction: column;
   }
+  .sidebar__linkcontainer {
+    padding: 20px 0px;
+    border-top: 3px solid blue;
+    border-bottom: 3px solid blue;
+  }
   .sidebar__link {
     padding: 6px 8px 6px 16px;
   }
   .sidebar__logo {
-    font-size: 50px;
     padding: 6px 8px;
+    margin-bottom: 20px;
+  }
+  .sidebar__icons {
+    margin-top: 20px;
+    width: 75%;
   }
 }
+
 /*!
  * Bootstrap v5.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

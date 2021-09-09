@@ -15,23 +15,38 @@ main {
     top: 0;
     background-color: #111;
     overflow-x: hidden;
+    &__linkcontainer {
+        display: flex;
+        flex-direction: column;
+    }
     &__link, &__logo {
         text-decoration: none;
+    }
+    &__icons {
+        align-self: center;
+        display: flex;
+        justify-content: space-around;
     }
     @media (min-width: map-get($grid-breakpoints, "md" )) {
         min-width: 200px;
         padding-top: 20px;
         display: flex;
         flex-direction: column;
+        &__linkcontainer {
+            padding: 20px 0px;
+            border-top: 3px solid blue;
+            border-bottom: 3px solid blue;
+        }
         &__link {
             padding: 6px 8px 6px 16px;
         }
         &__logo {
-            font-size: 50px;
             padding: 6px 8px;
+            margin-bottom: 20px;
         }
-    }
-    span[class^="icon-"] {
-
+        &__icons {
+            margin-top: 20px;
+            width: 75%;
+        }
     }
 }
