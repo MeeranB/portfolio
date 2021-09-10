@@ -1,1 +1,15 @@
 @use '../custom' as *;
+
+.projects-section {
+    height: auto;
+    background-color: black;
+}
+
+.project-container {
+    height: 500px;
+}
+
+.project-card {
+    background-color: red;
+    height: 300px;
+}
