@@ -123,7 +123,7 @@
 }
 @media (min-width: 992px) {
   main {
-    margin-left: 300px;
+    margin-left: 250px;
   }
 }
 
@@ -175,7 +175,7 @@
 }
 @media (min-width: 992px) {
   .sidebar {
-    min-width: 300px;
+    min-width: 250px;
     padding-top: 30px;
   }
   .sidebar__logo {
