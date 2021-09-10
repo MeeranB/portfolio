@@ -58,7 +58,7 @@
     content: "\e904";
   }
 
-  .sidebar {
+.sidebar {
     @media (min-width: map-get($grid-breakpoints, "md" )) {
         &__logo {
             font-size: 3rem;
@@ -79,4 +79,33 @@
             font-size: 3rem;
         }
     }
-  }
+}
+
+.hero-image {
+    color: white;
+    text-align: center;
+}
+
+.hero-text {
+    &--title {
+        letter-spacing: 2px;
+        font-size: 2rem;
+        @media (min-width: map-get($grid-breakpoints, "md" )) {
+            font-size: 2.5rem;
+        }
+        @media (min-width: map-get($grid-breakpoints, "lg" )) {
+            font-size: 3rem;
+        }   
+    }
+    &--subtitle {
+        letter-spacing: 1.5px;
+        font-size: 1rem;
+        @media (min-width: map-get($grid-breakpoints, "md" )) {
+            font-size: 1.25rem;
+        }
+        @media (min-width: map-get($grid-breakpoints, "lg" )) {
+            font-size: 1.5rem;
+        }   
+    }
+    
+}
