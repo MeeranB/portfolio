@@ -1,8 +1,15 @@
 @use '../custom' as *;
 
+main {
+    background-color: black;
+}
+
 .projects-section {
     height: auto;
+    width: 90%;
     background-color: black;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .project-container {
@@ -12,4 +19,9 @@
 .project-card {
     background-color: red;
     height: 300px;
+}
+
+h2 {
+    margin-left: 2rem;
+    margin-top: 50px;
 }
