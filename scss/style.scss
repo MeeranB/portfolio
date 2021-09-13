@@ -1,0 +1,11 @@
+//Imports custom scss
+@use 'custom';
+
+//Imports components
+@use 'components/typography.scss';
+
+//Imports sections
+@use 'sections/_sidebar.scss';
+@use 'sections/_hero.scss';
+@use 'sections/_projects.scss';
+
