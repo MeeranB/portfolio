@@ -13,15 +13,24 @@ main {
 }
 
 .project-container {
-    height: 500px;
-}
-
-.project-card {
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-bottom: 3rem;
+    background-image: url(../../assets/images/placeholderproject.jpeg);
+    background-origin: content-box;
+    background-size: cover;
+    background-clip: content-box;
+    background-position: 100% center;
     height: 300px;
+    h5 {
+        margin-left: 1rem;
+        margin-top: auto;
+    }
 }
 
-h2 {
+.projects-section-title {
     margin-left: 2rem;
     margin-top: 50px;
 }
