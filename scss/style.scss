@@ -4,9 +4,13 @@
 //Imports components
 @use 'components/typography.scss';
 
-//Imports sections
+//Imports sections (General)
 @use 'sections/_sidebar.scss';
+
+//Imports sections (Index)
 @use 'sections/_hero.scss';
 @use 'sections/_projects.scss';
 @use 'sections/_contact.scss';
 
+//Imports sections (Examples)
+@use 'sections/_examples.scss'
