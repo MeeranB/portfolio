@@ -10235,12 +10235,16 @@ textarea.form-control-lg {
   }
 }
 
-.projects-section-title {
+.projects-section-title, .contact-section-title {
   color: white;
 }
 
 .projects-section h5 {
   font-size: 1.6vw;
+  color: white;
+}
+
+p {
   color: white;
 }
 
@@ -10356,6 +10360,27 @@ main {
 .projects-section-title {
   margin-left: 2rem;
   margin-top: 50px;
+}
+
+.contact-section-title {
+  margin-left: 2rem;
+  margin-top: 50px;
+}
+
+.contact-form-container {
+  width: 90%;
+}
+.contact-form-container .message-input {
+  height: 10rem;
+}
+.contact-form-container .btn {
+  display: block;
+  width: 30%;
+  margin-left: 0.75rem;
+}
+
+main p {
+  margin-left: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */
