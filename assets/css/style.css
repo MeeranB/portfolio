@@ -10248,7 +10248,7 @@ p {
   color: white;
 }
 
-.examples h1 {
+.container--main h1 {
   color: white;
 }
 
@@ -10396,16 +10396,16 @@ body {
   height: 100%;
 }
 
-.examples {
+.container--main {
   padding-top: 80px;
   padding-bottom: 40px;
   height: 100%;
 }
-.examples h1 {
+.container--main h1 {
   margin-left: 2rem;
   margin-bottom: 40px;
 }
-.examples p {
+.container--main p {
   margin-left: 2rem;
 }
 
