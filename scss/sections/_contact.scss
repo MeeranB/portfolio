@@ -1,1 +1,22 @@
 @use '../custom' as *;
+
+.contact-section-title {
+    margin-left: 2rem;
+    margin-top: 50px;
+}
+
+.contact-form-container {
+    width: 90%;
+    .message-input {
+        height: 10rem;
+    }
+    .btn {
+        display: block;
+        width: 30%;
+        margin-left: 0.75rem;
+    }
+}
+
+main p {
+    margin-left: 2rem;
+}

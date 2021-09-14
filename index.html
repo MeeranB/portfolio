@@ -13,10 +13,10 @@
             <a class="sidebar__logo text-uppercase text-center" href="#">mb</a>
             <div class="sidebar__linkcontainer">
                 <a class="sidebar__link" href="#">About Me</a>
-                <a class="sidebar__link" href="#">My Portfolio</a>
+                <a class="sidebar__link" href="#projects">My Portfolio</a>
                 <a class="sidebar__link" href="#">Coding Examples</a>
                 <a class="sidebar__link" href="#">SCS Scheme</a>
-                <a class="sidebar__link" href="#">Contact Me</a>
+                <a class="sidebar__link" href="#contact">Contact Me</a>
             </div>
             <div class="sidebar__icons">
                 <a href="https://www.linkedin.com/in/meeran-bala-kumaran-3880081b3/"><span class="icon-linkedin"></span></a>
@@ -33,7 +33,7 @@
             </div>
             <!-- /hero-image -->
             <!-- projects -->
-            <h2 class="projects-section-title">Projects</h2>
+            <h2 id="projects" class="projects-section-title">Projects</h2>
             <div class="projects-section container">
                 <div class="row">
                     <article class="project-container col-xl-4 col-lg-6 col-sm-12">
@@ -58,6 +58,28 @@
             </div>
             <!-- /projects -->
             <!-- contact -->
+            <h2 id="contact" class="contact-section-title mb-5">Contact me</h2>
+            <p>I am open to career opportunities, and can be contacted at <a href="mailto:meeran.bala-kumaran@netmatters-scs.co.uk">meeran.bala-kumaran@netmatters-scs.co.uk</a> or via the contact form.</p>
+            <div class="contact-form-container container pb-5">
+                <form class="row g-4 mt-5">
+                    <div class="col-6 mb-2">
+                        <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+                    </div>
+                    <div class="col-6 mb-2">
+                        <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                    </div>                    
+                    <div class="col-6 mb-2">
+                        <input type="email" class="form-control" placeholder="Email" aria-label="Email">
+                    </div>
+                    <div class="col-6 mb-2">
+                        <input type="text" class="form-control" placeholder="Subject" aria-label="Subject">
+                    </div>
+                    <div class="col-12 mb-4 message">
+                        <textarea type="text" class="form-control message-input" placeholder="Message" aria-label="Message"></textarea>
+                    </div>
+                    <input type="submit" class="btn btn-success">
+                </form>
+            </div>
             <!-- /contact -->
         </main>
     </div>
