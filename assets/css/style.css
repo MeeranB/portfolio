@@ -10180,6 +10180,9 @@ textarea.form-control-lg {
   content: "\e904";
 }
 
+.sidebar__link:hover {
+  color: white;
+}
 @media (min-width: 768px) {
   .sidebar__logo {
     font-size: 3rem;
@@ -10271,7 +10274,7 @@ p {
   overflow-y: hidden;
   z-index: 1;
   top: 0;
-  background-color: #111;
+  background-color: #200303;
   overflow-x: hidden;
 }
 .sidebar__linkcontainer {
@@ -10281,10 +10284,33 @@ p {
 .sidebar__link, .sidebar__logo {
   text-decoration: none;
 }
+.sidebar__link:hover .sidebar__link__text {
+  transition: color 0.3s ease-in;
+}
+.sidebar__link:hover .sidebar__link__text::after {
+  opacity: 100%;
+  transition: opacity 0.3s ease-in;
+}
+.sidebar__link__text {
+  display: table;
+  position: relative;
+}
+.sidebar__link__text::after {
+  content: "";
+  display: block;
+  opacity: 0%;
+  position: absolute;
+  background-color: lightblue;
+  height: 2px;
+  width: 100%;
+}
 .sidebar__icons {
   align-self: center;
   display: flex;
   justify-content: space-around;
+}
+.sidebar__icons a {
+  text-decoration: none;
 }
 @media (min-width: 768px) {
   .sidebar {

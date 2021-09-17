@@ -59,6 +59,9 @@
   }
 
 .sidebar {
+    &__link:hover {
+        color: white;
+    }
     @media (min-width: map-get($grid-breakpoints, "md" )) {
         &__logo {
             font-size: 3rem;
