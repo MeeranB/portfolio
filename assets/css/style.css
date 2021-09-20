@@ -10262,6 +10262,9 @@ p {
 .about-content .base-desc {
   font-size: 1.1rem;
 }
+.about-content .certhe-desc ul {
+  color: white;
+}
 
 .examples-header .examples-title {
   text-align: center;
