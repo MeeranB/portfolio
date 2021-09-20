@@ -15,8 +15,9 @@ main {
 .project-container {
     display: flex;
     flex-direction: column;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    position: relative;
+    padding-left: 2rem;
+    padding-right: 2rem;
     margin-bottom: 3rem;
     background-image: url(../../assets/images/placeholderproject.jpeg);
     background-origin: content-box;
@@ -24,10 +25,46 @@ main {
     background-clip: content-box;
     background-position: 100% center;
     height: 300px;
-    h5 {
-        margin-left: 1rem;
+    .card-title, .hover-title {
+        z-index: 2;
+        padding-left: 1em;
         margin-top: auto;
     }
+    .card-title {
+        opacity: 75%;
+    }
+    .hover-content {
+        display: none;
+        position: absolute;
+        bottom: -50px;
+        transition: transform 0.3s ease-in;
+    }
+    &:hover {
+        .overlay {
+            opacity: 20%;
+            transition: opacity 0.3s ease-in;
+        }
+        .hover-content {
+            display: block;
+            width: calc(100% - 4rem);
+            transform: translateY(-50px);
+        }
+        .card-title {
+            display: none;
+        }
+    }
+    .hover-desc {
+        z-index: 2;
+        padding: 0 1em;
+    }
+}
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 4rem);
+    background-color: grey;
+    opacity: 0%;
 }
 
 .projects-section-title {
