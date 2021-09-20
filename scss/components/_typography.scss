@@ -131,8 +131,35 @@ p {
     color: white;
 }
 
-.container--main {
-    h1 {
-        color: white;
+.about-header {
+    .about-title {
+        text-align: center;
+        color: black;
     }
+}
+
+.about-content {
+  .base-desc {
+    font-size: 1.1rem;
+  }
+}
+
+.examples-header {
+  .examples-title {
+    text-align: center;
+    color: black;
+  }
+}
+
+.scs-header {
+  .scs-title {
+      text-align: center;
+      color: black;
+  }
+}
+
+.scs-content {
+  .base-desc {
+    font-size: 1.1rem;
+  }
 }

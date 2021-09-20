@@ -10254,8 +10254,27 @@ p {
   color: white;
 }
 
-.container--main h1 {
-  color: white;
+.about-header .about-title {
+  text-align: center;
+  color: black;
+}
+
+.about-content .base-desc {
+  font-size: 1.1rem;
+}
+
+.examples-header .examples-title {
+  text-align: center;
+  color: black;
+}
+
+.scs-header .scs-title {
+  text-align: center;
+  color: black;
+}
+
+.scs-content .base-desc {
+  font-size: 1.1rem;
 }
 
 @media (min-width: 768px) {
@@ -10346,6 +10365,15 @@ p {
   .sidebar__logo {
     margin-bottom: 30px;
   }
+}
+
+body {
+  height: 100vh;
+}
+
+.page-container {
+  background-color: black;
+  height: 100%;
 }
 
 .hero-image {
@@ -10451,26 +10479,31 @@ main {
   margin-left: 2rem;
 }
 
-body {
-  height: 100vh;
+.examples-header {
+  padding: 40px 0px;
+  background-color: grey;
 }
 
-.page-container {
-  background-color: black;
-  height: 100%;
+.examples-content {
+  padding: 30px 2em;
 }
 
-.container--main {
-  padding-top: 80px;
-  padding-bottom: 40px;
-  height: 100%;
+.about-header {
+  padding: 40px 0px;
+  background-color: grey;
 }
-.container--main h1 {
-  margin-left: 2rem;
-  margin-bottom: 40px;
+
+.about-content {
+  padding: 30px 2em;
 }
-.container--main p {
-  margin-left: 2rem;
+
+.scs-header {
+  padding: 40px 0px;
+  background-color: grey;
+}
+
+.scs-content {
+  padding: 30px 2em;
 }
 
 /*# sourceMappingURL=style.css.map */

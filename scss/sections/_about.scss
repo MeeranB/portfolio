@@ -1,1 +1,10 @@
 @use '../custom' as *;
+
+.about-header {
+    padding: 40px 0px;
+    background-color: grey;
+}
+
+.about-content {
+    padding: 30px 2em;
+}
