@@ -10260,7 +10260,7 @@ p {
 }
 
 .about-content .base-desc {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 .about-content .certhe-desc ul {
   color: white;
@@ -10278,6 +10278,9 @@ p {
 
 .scs-content .base-desc {
   font-size: 1.1rem;
+}
+.scs-content ul {
+  color: white;
 }
 
 @media (min-width: 768px) {
@@ -10498,6 +10501,10 @@ main {
 
 .about-content {
   padding: 30px 2em;
+}
+.about-content .base-desc {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .scs-header {
