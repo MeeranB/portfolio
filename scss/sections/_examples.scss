@@ -1,23 +1,10 @@
 @use '../custom' as *;
 
-body {
-    height: 100vh;
+.examples-header {
+    padding: 40px 0px;
+    background-color: grey;
 }
 
-.page-container {
-    background-color: black;
-    height: 100%;
-}
-
-.container--main {
-    padding-top: 80px;
-    padding-bottom: 40px;
-    height: 100%;
-    h1 {
-        margin-left: 2rem;
-        margin-bottom: 40px;
-    }
-    p {
-        margin-left: 2rem;
-    }
+.examples-content {
+    padding: 30px 2em;
 }

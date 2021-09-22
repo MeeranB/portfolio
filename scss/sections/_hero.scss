@@ -1,5 +1,14 @@
 @use '../custom' as *;
 
+body {
+    height: 100vh;
+}
+
+.page-container {
+    background-color: black;
+    height: 100%;
+}
+
 .hero-image {
     position: relative;
     display: flex;

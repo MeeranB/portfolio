@@ -10243,18 +10243,72 @@ textarea.form-control-lg {
 }
 
 .projects-section .card-title, .projects-section .hover-title {
-  font-size: 1.6vw;
   color: white;
 }
+.projects-section .hover-title, .projects-section .card-title {
+  font-size: 1.25rem;
+}
+@media (min-width: 1200px) {
+  .projects-section .hover-title, .projects-section .card-title {
+    font-size: 1.6rem;
+  }
+}
 .projects-section .hover-desc {
-  font-size: 1vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 1rem;
+}
+@media (min-width: 1200px) {
+  .projects-section .hover-desc {
+    font-size: 1rem;
+  }
 }
 
 p {
   color: white;
 }
 
-.container--main h1 {
+.about-header .about-title {
+  text-align: center;
+  color: black;
+}
+
+.about-content .base-desc {
+  font-size: 1.2rem;
+}
+.about-content .certhe-desc ul {
+  color: white;
+}
+.about-content h2 {
+  color: grey;
+}
+
+.examples-header .examples-title {
+  text-align: center;
+  color: black;
+}
+
+.scs-header .scs-title {
+  text-align: center;
+  color: black;
+}
+
+.scs-content .scs-title {
+  color: white;
+}
+.scs-content .treehouse-title {
+  color: #5fcf80;
+}
+.scs-content .netmatters-title {
+  color: grey;
+}
+.scs-content .base-desc {
+  font-size: 1.1rem;
+}
+.scs-content ul {
   color: white;
 }
 
@@ -10348,6 +10402,15 @@ p {
   }
 }
 
+body {
+  height: 100vh;
+}
+
+.page-container {
+  background-color: black;
+  height: 100%;
+}
+
 .hero-image {
   position: relative;
   display: flex;
@@ -10400,6 +10463,9 @@ main {
   bottom: -50px;
   transition: transform 0.3s ease-in;
 }
+.project-container:hover {
+  cursor: pointer;
+}
 .project-container:hover .overlay {
   opacity: 20%;
   transition: opacity 0.3s ease-in;
@@ -10451,26 +10517,47 @@ main {
   margin-left: 2rem;
 }
 
-body {
-  height: 100vh;
+.examples-header {
+  padding: 40px 0px;
+  background-color: grey;
 }
 
-.page-container {
-  background-color: black;
-  height: 100%;
+.examples-content {
+  padding: 30px 2em;
 }
 
-.container--main {
-  padding-top: 80px;
-  padding-bottom: 40px;
-  height: 100%;
+.about-header {
+  padding: 40px 0px;
+  background-color: grey;
 }
-.container--main h1 {
-  margin-left: 2rem;
-  margin-bottom: 40px;
+
+.about-content {
+  padding: 30px 2em;
 }
-.container--main p {
-  margin-left: 2rem;
+.about-content .base-desc {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.certhe-desc, .base-desc, .practical-experience {
+  border-radius: 25px;
+  background: black;
+  padding: 20px;
+}
+
+.scs-header {
+  padding: 40px 0px;
+  background-color: grey;
+}
+
+.scs-content {
+  padding: 30px 2em;
+}
+
+.treehouse, .netmatters, .base-desc, .treehouse-score {
+  border-radius: 25px;
+  background: black;
+  padding: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */
