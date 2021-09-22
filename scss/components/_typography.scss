@@ -119,12 +119,26 @@
 
 .projects-section {
     .card-title, .hover-title {
-        font-size: 1.6vw;
         color: white;
     }
-    .hover-desc {
-      font-size: 1vw;
+    .hover-title, .card-title {
+      font-size: 1.25rem;
+      @media (min-width: map-get($grid-breakpoints, "xl" )) {
+        font-size: 1.6rem;
+      }
     }
+    .hover-desc {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      font-size: 1rem;
+      @media (min-width: map-get($grid-breakpoints, "xl" )) {
+        font-size: 1rem;
+      }
+    }
+
 }
 
 p {
@@ -147,6 +161,9 @@ p {
       color: white;
     }
   }
+  h2 {
+    color: grey;
+  }
 }
 
 .examples-header {
@@ -164,6 +181,15 @@ p {
 }
 
 .scs-content {
+  .scs-title {
+    color: white;
+  }
+  .treehouse-title {
+    color:#5fcf80;
+  }
+  .netmatters-title {
+    color: grey;
+  }
   .base-desc {
     font-size: 1.1rem;
   }

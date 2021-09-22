@@ -10243,11 +10243,28 @@ textarea.form-control-lg {
 }
 
 .projects-section .card-title, .projects-section .hover-title {
-  font-size: 1.6vw;
   color: white;
 }
+.projects-section .hover-title, .projects-section .card-title {
+  font-size: 1.25rem;
+}
+@media (min-width: 1200px) {
+  .projects-section .hover-title, .projects-section .card-title {
+    font-size: 1.6rem;
+  }
+}
 .projects-section .hover-desc {
-  font-size: 1vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 1rem;
+}
+@media (min-width: 1200px) {
+  .projects-section .hover-desc {
+    font-size: 1rem;
+  }
 }
 
 p {
@@ -10265,6 +10282,9 @@ p {
 .about-content .certhe-desc ul {
   color: white;
 }
+.about-content h2 {
+  color: grey;
+}
 
 .examples-header .examples-title {
   text-align: center;
@@ -10276,6 +10296,15 @@ p {
   color: black;
 }
 
+.scs-content .scs-title {
+  color: white;
+}
+.scs-content .treehouse-title {
+  color: #5fcf80;
+}
+.scs-content .netmatters-title {
+  color: grey;
+}
 .scs-content .base-desc {
   font-size: 1.1rem;
 }
@@ -10434,6 +10463,9 @@ main {
   bottom: -50px;
   transition: transform 0.3s ease-in;
 }
+.project-container:hover {
+  cursor: pointer;
+}
 .project-container:hover .overlay {
   opacity: 20%;
   transition: opacity 0.3s ease-in;
@@ -10507,6 +10539,12 @@ main {
   padding-bottom: 10px;
 }
 
+.certhe-desc, .base-desc, .practical-experience {
+  border-radius: 25px;
+  background: black;
+  padding: 20px;
+}
+
 .scs-header {
   padding: 40px 0px;
   background-color: grey;
@@ -10514,6 +10552,12 @@ main {
 
 .scs-content {
   padding: 30px 2em;
+}
+
+.treehouse, .netmatters, .base-desc, .treehouse-score {
+  border-radius: 25px;
+  background: black;
+  padding: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */
