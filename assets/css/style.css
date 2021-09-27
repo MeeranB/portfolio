@@ -10265,7 +10265,7 @@ main {
   margin-top: auto;
 }
 .project-container .card-title {
-  opacity: 75%;
+  opacity: 0.75;
 }
 .project-container .hover-content {
   display: none;
@@ -10277,7 +10277,7 @@ main {
   cursor: pointer;
 }
 .project-container:hover .overlay {
-  opacity: 20%;
+  opacity: 0.2;
   transition: opacity 0.3s ease-in;
 }
 .project-container:hover .hover-content {
@@ -10298,7 +10298,7 @@ main {
   height: 100%;
   width: calc(100% - 4rem);
   background-color: grey;
-  opacity: 0%;
+  opacity: 0;
 }
 
 .projects-section-title {
