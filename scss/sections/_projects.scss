@@ -42,6 +42,9 @@ main {
     &:hover {
         cursor: pointer;
         .overlay {
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                display: block;
+            }
             opacity: 0.2;
             transition: opacity 0.3s ease-in;
         }
@@ -61,6 +64,9 @@ main {
 }
 
 .overlay {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        display: none;
+    }
     position: absolute;
     height: 100%;
     width: calc(100% - 4rem);

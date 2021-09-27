@@ -10280,6 +10280,11 @@ main {
   opacity: 0.2;
   transition: opacity 0.3s ease-in;
 }
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .project-container:hover .overlay {
+    display: block;
+  }
+}
 .project-container:hover .hover-content {
   display: block;
   width: calc(100% - 4rem);
@@ -10299,6 +10304,11 @@ main {
   width: calc(100% - 4rem);
   background-color: grey;
   opacity: 0;
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .overlay {
+    display: none;
+  }
 }
 
 .projects-section-title {
