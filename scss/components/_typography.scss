@@ -59,6 +59,9 @@
   }
 
 .sidebar {
+    &__link, &__logo {
+        color: #f39c12;
+    }
     &__link:hover {
         color: white;
     }
@@ -68,7 +71,7 @@
         }
         span[class^="icon-"] {
             font-size: 2rem;
-            color: white;
+            color: #f39c12;
         }
     }
     @media (min-width: map-get($grid-breakpoints, "lg")) {
@@ -85,7 +88,7 @@
 }
 
 .hero-image {
-    color: white;
+    color: #f39c12;
     text-align: center;
 }
 
@@ -114,12 +117,12 @@
 }
 
 .projects-section-title, .contact-section-title {
-    color: white;
+    color: #f39c12;;
 }
 
 .projects-section {
     .card-title, .hover-title {
-        color: white;
+        color: #f39c12;;
     }
     .hover-title, .card-title {
       font-size: 1.25rem;
@@ -142,58 +145,58 @@
 }
 
 p {
-    color: white;
+    color: #f39c12;;
 }
 
 .about-header {
     .about-title {
         text-align: center;
-        color: black;
+        color: #f39c12;;
     }
 }
 
 .about-content {
   .base-desc {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .certhe-desc {
     ul {
-      color: white;
+      color: #f39c12;
     }
   }
   h2 {
-    color: grey;
+    color: #f39c12
   }
 }
 
 .examples-header {
   .examples-title {
     text-align: center;
-    color: black;
+    color: #f39c12;;
   }
 }
 
 .scs-header {
   .scs-title {
       text-align: center;
-      color: black;
+      color: #f39c12;
   }
 }
 
 .scs-content {
   .scs-title {
-    color: white;
+    color: #f39c12;
   }
   .treehouse-title {
-    color:#5fcf80;
+    color:#f39c12;
   }
   .netmatters-title {
-    color: grey;
+    color: #f39c12;
   }
   .base-desc {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   ul {
-    color: white;
+    color: #f39c12;
   }
 }

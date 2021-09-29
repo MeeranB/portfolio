@@ -9990,6 +9990,9 @@ h3 {
   content: "\e904";
 }
 
+.sidebar__link, .sidebar__logo {
+  color: #f39c12;
+}
 .sidebar__link:hover {
   color: white;
 }
@@ -9999,7 +10002,7 @@ h3 {
   }
   .sidebar span[class^=icon-] {
     font-size: 2rem;
-    color: white;
+    color: #f39c12;
   }
 }
 @media (min-width: 992px) {
@@ -10015,7 +10018,7 @@ h3 {
 }
 
 .hero-image {
-  color: white;
+  color: #f39c12;
   text-align: center;
 }
 
@@ -10049,11 +10052,11 @@ h3 {
 }
 
 .projects-section-title, .contact-section-title {
-  color: white;
+  color: #f39c12;
 }
 
 .projects-section .card-title, .projects-section .hover-title {
-  color: white;
+  color: #f39c12;
 }
 .projects-section .hover-title, .projects-section .card-title {
   font-size: 1.25rem;
@@ -10078,48 +10081,48 @@ h3 {
 }
 
 p {
-  color: white;
+  color: #f39c12;
 }
 
 .about-header .about-title {
   text-align: center;
-  color: black;
+  color: #f39c12;
 }
 
 .about-content .base-desc {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .about-content .certhe-desc ul {
-  color: white;
+  color: #f39c12;
 }
 .about-content h2 {
-  color: grey;
+  color: #f39c12;
 }
 
 .examples-header .examples-title {
   text-align: center;
-  color: black;
+  color: #f39c12;
 }
 
 .scs-header .scs-title {
   text-align: center;
-  color: black;
+  color: #f39c12;
 }
 
 .scs-content .scs-title {
-  color: white;
+  color: #f39c12;
 }
 .scs-content .treehouse-title {
-  color: #5fcf80;
+  color: #f39c12;
 }
 .scs-content .netmatters-title {
-  color: grey;
+  color: #f39c12;
 }
 .scs-content .base-desc {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 .scs-content ul {
-  color: white;
+  color: #f39c12;
 }
 
 @media (min-width: 768px) {
@@ -10141,8 +10144,9 @@ p {
   overflow-y: hidden;
   z-index: 1;
   top: 0;
-  background-color: #200303;
+  background-color: #050505;
   overflow-x: hidden;
+  border-right: solid 3px #f39c12;
 }
 .sidebar__linkcontainer {
   display: flex;
@@ -10153,6 +10157,7 @@ p {
 }
 .sidebar__link:hover, .sidebar__logo:hover {
   text-decoration: none;
+  color: white;
 }
 .sidebar__link:hover .sidebar__link__text {
   transition: color 0.3s ease-in;
@@ -10170,7 +10175,7 @@ p {
   display: block;
   opacity: 0;
   position: absolute;
-  background-color: lightblue;
+  background-color: #f39c12;
   height: 2px;
   width: 100%;
 }
@@ -10190,8 +10195,8 @@ p {
   }
   .sidebar__linkcontainer {
     padding: 20px 0px;
-    border-top: 3px solid blue;
-    border-bottom: 3px solid blue;
+    border-top: 3px solid #f39c12;
+    border-bottom: 3px solid #f39c12;
   }
   .sidebar__link {
     padding: 10px 8px 10px 16px;
@@ -10231,7 +10236,7 @@ body {
   align-items: center;
   height: 100vh;
   width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../assets/images/hero.jpeg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../assets/images/hero2.jpeg);
   background-size: cover;
   background-position: center;
 }
@@ -10255,7 +10260,7 @@ main {
   padding-left: 2rem;
   padding-right: 2rem;
   margin-bottom: 3rem;
-  background-image: url(../../assets/images/placeholderproject.jpeg);
+  background-image: url(../../assets/images/placeholderproject_1.jpeg);
   background-origin: content-box;
   background-size: cover;
   background-clip: content-box;
@@ -10268,19 +10273,20 @@ main {
   margin-top: auto;
 }
 .project-container .card-title {
-  opacity: 0.75;
+  opacity: 1;
 }
 .project-container .hover-content {
-  display: none;
+  display: block;
   position: absolute;
-  bottom: -50px;
-  transition: transform 0.3s ease-in;
+  bottom: -60px;
+  opacity: 0;
+  transition: transform 0.1s ease-in;
 }
 .project-container:hover {
   cursor: pointer;
 }
 .project-container:hover .overlay {
-  opacity: 0.2;
+  opacity: 0.8;
   transition: opacity 0.3s ease-in;
 }
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -10290,8 +10296,11 @@ main {
 }
 .project-container:hover .hover-content {
   display: block;
+  position: absolute;
+  z-index: 2;
   width: calc(100% - 4rem);
   transform: translateY(-50px);
+  opacity: 1;
 }
 .project-container:hover .card-title {
   display: none;
@@ -10305,7 +10314,7 @@ main {
   position: absolute;
   height: 100%;
   width: calc(100% - 4rem);
-  background-color: grey;
+  background-color: black;
   opacity: 0;
 }
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -10342,7 +10351,8 @@ main {
 
 .examples-header {
   padding: 40px 0px;
-  background-color: grey;
+  background-color: black;
+  border-bottom: 3px solid #f39c12;
 }
 
 .examples-content {
@@ -10351,7 +10361,8 @@ main {
 
 .about-header {
   padding: 40px 0px;
-  background-color: grey;
+  background-color: black;
+  border-bottom: 3px solid #f39c12;
 }
 
 .about-content {
@@ -10370,7 +10381,8 @@ main {
 
 .scs-header {
   padding: 40px 0px;
-  background-color: grey;
+  background-color: black;
+  border-bottom: 3px solid #f39c12;
 }
 
 .scs-content {

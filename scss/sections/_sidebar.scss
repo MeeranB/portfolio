@@ -17,8 +17,9 @@ main {
     overflow-y: hidden;
     z-index: 1;
     top: 0;
-    background-color: rgb(32, 3, 3);
+    background-color: #050505;
     overflow-x: hidden;
+    border-right: solid 3px #f39c12;
     &__linkcontainer {
         display: flex;
         flex-direction: column;
@@ -27,6 +28,7 @@ main {
         text-decoration: none;
         &:hover {
             text-decoration: none;
+            color: white;
         }
     }
     &__link {
@@ -50,7 +52,7 @@ main {
             display: block;
             opacity: 0;
             position: absolute;
-            background-color: lightblue;
+            background-color: #f39c12;
             height: 2px;
             width: 100%;
         }
@@ -69,8 +71,8 @@ main {
         display: flex;
         &__linkcontainer {
             padding: 20px 0px;
-            border-top: 3px solid blue;
-            border-bottom: 3px solid blue;
+            border-top: 3px solid #f39c12;
+            border-bottom: 3px solid #f39c12;
         }
         &__link {
             padding: 10px 8px 10px 16px;

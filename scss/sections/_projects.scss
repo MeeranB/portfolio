@@ -19,7 +19,7 @@ main {
     padding-left: 2rem;
     padding-right: 2rem;
     margin-bottom: 3rem;
-    background-image: url(../../assets/images/placeholderproject.jpeg);
+    background-image: url(../../assets/images/placeholderproject_1.jpeg);
     background-origin: content-box;
     background-size: cover;
     background-clip: content-box;
@@ -31,13 +31,14 @@ main {
         margin-top: auto;
     }
     .card-title {
-        opacity: 0.75;
+        opacity: 1;
     }
     .hover-content {
-        display: none;
+        display: block;
         position: absolute;
-        bottom: -50px;
-        transition: transform 0.3s ease-in;
+        bottom: -60px;
+        opacity: 0;
+        transition: transform 0.1s ease-in;
     }
     &:hover {
         cursor: pointer;
@@ -45,13 +46,16 @@ main {
             @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
                 display: block;
             }
-            opacity: 0.2;
+            opacity: 0.8;
             transition: opacity 0.3s ease-in;
         }
         .hover-content {
             display: block;
+            position: absolute;
+            z-index: 2;
             width: calc(100% - 4rem);
             transform: translateY(-50px);
+            opacity: 1;
         }
         .card-title {
             display: none;
@@ -70,7 +74,7 @@ main {
     position: absolute;
     height: 100%;
     width: calc(100% - 4rem);
-    background-color: grey;
+    background-color: black;
     opacity: 0;
 }
 
