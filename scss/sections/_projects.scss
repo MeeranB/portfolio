@@ -26,44 +26,54 @@ main {
     background-position: 100% center;
     height: 300px;
     .card-title, .hover-title {
-        z-index: 2;
+        z-index: 1;
         padding-left: 1em;
         margin-top: auto;
+    }
+    .hover-desc {
+        padding-left: 1.6em;
     }
     .card-title {
         opacity: 1;
     }
+    .hover-content-container {
+        display: none;
+        position: absolute;
+        height: 100%;
+        flex-direction: column;
+    }
     .hover-content {
         display: block;
+        margin-top: auto;
+    }
+    .slide-effect {
+        display: block;
         position: absolute;
-        bottom: -60px;
-        opacity: 0;
-        transition: transform 0.1s ease-in;
+        background-color: black;
+        height: 0%;
+        width: 100%;
     }
-    &:hover {
-        cursor: pointer;
-        .overlay {
-            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .hotspot {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        &:hover {
+            cursor: pointer;
+            .overlay {
                 display: block;
+                opacity: 0.8;
+                transition: opacity 0.3s ease-in;
             }
-            opacity: 0.8;
-            transition: opacity 0.3s ease-in;
+            .card-title {
+                display: none;
+            }
+            .hover-content-container {
+                display: flex;
+            }
+            .slide-effect {
+                animation: slide-effect 0.2s ease-in;
+            }
         }
-        .hover-content {
-            display: block;
-            position: absolute;
-            z-index: 2;
-            width: calc(100% - 4rem);
-            transform: translateY(-50px);
-            opacity: 1;
-        }
-        .card-title {
-            display: none;
-        }
-    }
-    .hover-desc {
-        z-index: 2;
-        padding: 0 1em;
     }
 }
 
@@ -81,4 +91,13 @@ main {
 .projects-section-title {
     margin-left: 2rem;
     margin-top: 50px;
+}
+
+@keyframes slide-effect {
+    0% { height: 50%; }
+    10% { height: 40%; }
+    60% { height: 30%; }
+    70% { height: 20%; } 
+    75%{ height: 10%; }
+    100% { height: 0; }
 }
