@@ -41,10 +41,16 @@ main {
         position: absolute;
         height: 100%;
         flex-direction: column;
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            max-width: 100%;
+        }
     }
     .hover-content {
         display: block;
         margin-top: auto;
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            max-width: 80%;
+        }
     }
     .slide-effect {
         display: block;

@@ -7,13 +7,16 @@
 
 .contact-form-container {
     width: 90%;
+    .contact-field {
+        padding: 1rem 2rem;
+    }
     .message-input {
         height: 10rem;
     }
     .btn {
         display: block;
         width: 30%;
-        margin-left: 0.75rem;
+        margin-left: 2rem;
     }
 }
 

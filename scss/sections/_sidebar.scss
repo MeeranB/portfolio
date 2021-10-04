@@ -64,6 +64,11 @@ main {
         align-self: center;
         display: flex;
         justify-content: space-around;
+        .icon-linkedin, .icon-github {
+            &:hover {
+                color: white;
+            }
+        }
     }
     @media (min-width: map-get($grid-breakpoints, "md" )) {
         min-width: 200px;
