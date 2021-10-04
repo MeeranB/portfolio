@@ -25,16 +25,20 @@
         </nav>
         <main>
             <!-- hero-image -->
-            <div class="hero-image">
+            <div id="hero" class="hero-image">
                 <span class="hero-text">
                     <h1 class="hero-text--title">My Name is Meeran Bala-Kumaran</h1>
                     <span class="hero-text--subtitle">I am a Web Developer</span>
                 </span>
+                <a class="scroll-prompt--down" href="#projects">
+                    <p>Scroll down</p>
+                    <i class="icon-cheveron-down"></i>
+                </a>
             </div>
             <!-- /hero-image -->
             <!-- projects -->
-            <h2 id="projects" class="projects-section-title">Projects</h2>
             <div class="projects-section container">
+                <h2 id="projects" class="projects-section-title">Projects</h2>
                 <div class="row">
                     <article class="project-container col-xl-4 col-lg-6 col-sm-12">
                         <span class="hotspot">
@@ -118,9 +122,9 @@
             </div>
             <!-- /projects -->
             <!-- contact -->
+            <div class="contact-form-container container pb-5">
             <h2 id="contact" class="contact-section-title mb-5">Contact me</h2>
             <p class="contact-prompt">I am open to career opportunities, and can be contacted at <a href="mailto:meeran.bala-kumaran@netmatters-scs.co.uk">meeran.bala-kumaran@netmatters-scs.co.uk</a> or via the contact form.</p>
-            <div class="contact-form-container container pb-5">
                 <form class="row mt-5">
                     <div class="col-12 col-lg-6 contact-field">
                         <input type="text" class="form-control" placeholder="First name" aria-label="First name">
@@ -139,6 +143,10 @@
                     </div>
                     <input type="submit" value="Submit" class="btn btn-success">
                 </form>
+                <a class="scroll-prompt--up" href="#hero">
+                    <p>Back to top</p>
+                    <i class="icon-cheveron-up"></i>
+                </a>
             </div>
             <!-- /contact -->
         </main>

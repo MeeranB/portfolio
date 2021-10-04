@@ -10223,6 +10223,10 @@ p {
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   height: 100vh;
 }
@@ -10235,6 +10239,7 @@ body {
 .hero-image {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -10242,6 +10247,20 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../assets/images/hero2.jpeg);
   background-size: cover;
   background-position: center;
+}
+
+.hero-text {
+  margin-top: auto;
+}
+
+.scroll-prompt--down {
+  text-decoration: none;
+  color: #f39c12;
+  margin-top: auto;
+}
+.scroll-prompt--down:hover {
+  text-decoration: none;
+  color: #f39c12;
 }
 
 main {
@@ -10345,8 +10364,9 @@ main {
 }
 
 .projects-section-title {
-  margin-left: 2rem;
+  margin-left: 1rem;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 @keyframes slide-effect {
@@ -10370,7 +10390,7 @@ main {
   }
 }
 .contact-section-title {
-  margin-left: 2rem;
+  margin-left: 1rem;
   margin-top: 50px;
 }
 
@@ -10390,7 +10410,25 @@ main {
 }
 
 .contact-prompt {
-  margin-left: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.scroll-prompt--up {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #f39c12;
+}
+.scroll-prompt--up:hover {
+  text-decoration: none;
+  color: #f39c12;
+}
+.scroll-prompt--up p {
+  margin-top: 3rem;
 }
 
 .examples-header {
