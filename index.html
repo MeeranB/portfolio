@@ -9,6 +9,10 @@
 </head>
 <body>
     <div class="page-container">
+        <div class="menu-btn">
+            <div class="menu-btn__burger"></div>
+            <span class="title">Menu</span>
+        </div>
         <nav class="sidebar">
             <a class="sidebar__logo text-uppercase text-center" href="/index.html#">mb</a>
             <div class="sidebar__linkcontainer">
@@ -125,21 +129,26 @@
             <div class="contact-form-container container pb-5">
             <h2 id="contact" class="contact-section-title mb-5">Contact me</h2>
             <p class="contact-prompt">I am open to career opportunities, and can be contacted at <a href="mailto:meeran.bala-kumaran@netmatters-scs.co.uk">meeran.bala-kumaran@netmatters-scs.co.uk</a> or via the contact form.</p>
-                <form class="row mt-5">
+                <form id="contact-form" class="row mt-5">
                     <div class="col-12 col-lg-6 contact-field">
-                        <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+                        <label for="fname">First name (required, at least 2 characters)</label>
+                        <input id="fname" name="fname" type="text" class="form-control" placeholder="First name" aria-label="First name" required>
                     </div>
                     <div class="col-12 col-lg-6 contact-field">
-                        <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                        <label for="lname">Last name (required, at least 2 characters)</label>
+                        <input id="lname" name="lname" type="text" class="form-control" placeholder="Last name" aria-label="Last name" required>
                     </div>                    
                     <div class="col-12 col-lg-6 contact-field">
-                        <input type="email" class="form-control" placeholder="Email" aria-label="Email">
+                        <label for="email">Email (required)</label>
+                        <input id="email" name="email" type="email" class="form-control" placeholder="Email" aria-label="Email" required>
                     </div>
                     <div class="col-12 col-lg-6 contact-field">
-                        <input type="text" class="form-control" placeholder="Subject" aria-label="Subject">
+                        <label for="subject">Subject</label>
+                        <input id="subject" name="subject" type="text" class="form-control" placeholder="Subject" aria-label="Subject">
                     </div>
                     <div class="col-12 mb-4 contact-field message">
-                        <textarea type="text" class="form-control message-input" placeholder="Message" aria-label="Message"></textarea>
+                        <label for="message">Message (required, at least 2 characters)</label>
+                        <textarea id="message" name="message" type="text" class="form-control message-input" placeholder="Message" aria-label="Message" required></textarea>
                     </div>
                     <input type="submit" value="Submit" class="btn btn-success">
                 </form>
@@ -152,6 +161,9 @@
         </main>
     </div>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/3.3.2/jquery.sidebar.min.js"></script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
