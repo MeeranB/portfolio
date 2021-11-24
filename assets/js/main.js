@@ -79,6 +79,19 @@ const typewriter = new Typewriter(heroSubtitle[0], {
     delay: 75,
 });
 
-typewriter.pauseFor(2500).typeString("I am a web developer").start();
+typewriter
+    .pauseFor(1000)
+    .typeString("I am a web developer")
+    .pauseFor(1500)
+    .deleteChars(13)
+    .typeString("web designer")
+    .pauseFor(1500)
+    .deleteChars(18)
+    .changeDelay(60)
+    .typeString(
+        " could be an invaluable asset to <strong> your </strong> business!"
+    )
+    .pauseFor(2500)
+    .start();
 
 $("#contact-form").validate();
