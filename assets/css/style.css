@@ -10125,7 +10125,10 @@ p {
   color: #f39c12;
 }
 
-@media (min-width: 768px) {
+main {
+  margin-left: 200px;
+}
+@media (min-width: 576px) {
   main {
     margin-left: 200px;
   }
@@ -10136,8 +10139,64 @@ p {
   }
 }
 
-.sidebar {
+.menu-btn {
   display: none;
+  position: fixed;
+  z-index: 10;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 20px;
+  border-radius: 3px;
+  min-width: 63px;
+  height: 56px;
+  cursor: pointer;
+  background-color: #333645;
+}
+.menu-btn:hover {
+  background-color: #22242e;
+}
+
+.menu-btn__burger {
+  width: 33px;
+  height: 3px;
+  background: white;
+  border-radius: 1px;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: "";
+  position: absolute;
+  width: 33px;
+  height: 3px;
+  background: white;
+  border-radius: 1px;
+}
+
+.menu-btn__burger::before {
+  transform: translateY(-8px);
+}
+
+.menu-btn__burger::after {
+  transform: translateY(-16px);
+}
+
+.title {
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  top: 33px;
+  color: white;
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .title {
+    left: 15.5px;
+  }
+}
+
+.sidebar {
   flex-direction: column;
   position: fixed;
   height: 100%;
@@ -10147,6 +10206,9 @@ p {
   background-color: #050505;
   overflow-x: hidden;
   border-right: solid 3px #f39c12;
+  min-width: 200px;
+  padding-top: 20px;
+  display: flex;
 }
 .sidebar__linkcontainer {
   display: flex;
@@ -10190,28 +10252,21 @@ p {
 .sidebar__icons .icon-linkedin:hover, .sidebar__icons .icon-github:hover {
   color: white;
 }
-@media (min-width: 768px) {
-  .sidebar {
-    min-width: 200px;
-    padding-top: 20px;
-    display: flex;
-  }
-  .sidebar__linkcontainer {
-    padding: 20px 0px;
-    border-top: 3px solid #f39c12;
-    border-bottom: 3px solid #f39c12;
-  }
-  .sidebar__link {
-    padding: 10px 8px 10px 16px;
-  }
-  .sidebar__logo {
-    padding: 6px 8px;
-    margin-bottom: 20px;
-  }
-  .sidebar__icons {
-    margin-top: 20px;
-    width: 75%;
-  }
+.sidebar__linkcontainer {
+  padding: 20px 0px;
+  border-top: 3px solid #f39c12;
+  border-bottom: 3px solid #f39c12;
+}
+.sidebar__link {
+  padding: 10px 8px 10px 16px;
+}
+.sidebar__logo {
+  padding: 6px 8px;
+  margin-bottom: 20px;
+}
+.sidebar__icons {
+  margin-top: 20px;
+  width: 75%;
 }
 @media (min-width: 992px) {
   .sidebar {
@@ -10290,7 +10345,6 @@ main {
   height: 300px;
 }
 .project-container .card-title, .project-container .hover-title {
-  z-index: 1;
   padding-left: 1em;
   margin-top: auto;
 }
@@ -10429,6 +10483,10 @@ main {
 }
 .scroll-prompt--up p {
   margin-top: 3rem;
+}
+
+form label {
+  color: #f39c12;
 }
 
 .examples-header {
