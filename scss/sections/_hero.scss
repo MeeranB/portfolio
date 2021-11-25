@@ -28,6 +28,9 @@ body {
 
 .hero-text {
     margin-top: auto;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+     margin-top: 0px;
+   }
 }
 
 .scroll-prompt--down {
