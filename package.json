@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "compile:sass": "sass --watch scss:assets/css",
+    "compile:js": "./node_modules/.bin/babel js --watch --out-dir assets/js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +21,12 @@
   "dependencies": {
     "bootstrap": "^4.6.0",
     "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-transform-arrow-functions": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "sass": "^1.43.5"
   }
 }

@@ -132,11 +132,11 @@
                 <form id="contact-form" class="row mt-5">
                     <div class="col-12 col-lg-6 contact-field">
                         <label for="fname">First name (required, at least 2 characters)</label>
-                        <input id="fname" name="fname" type="text" class="form-control" placeholder="First name" aria-label="First name" required>
+                        <input id="fname" name="fname" minlength="2" type="text" class="form-control" placeholder="First name" aria-label="First name" required>
                     </div>
                     <div class="col-12 col-lg-6 contact-field">
                         <label for="lname">Last name (required, at least 2 characters)</label>
-                        <input id="lname" name="lname" type="text" class="form-control" placeholder="Last name" aria-label="Last name" required>
+                        <input id="lname" name="lname" minlength="2" type="text" class="form-control" placeholder="Last name" aria-label="Last name" required>
                     </div>                    
                     <div class="col-12 col-lg-6 contact-field">
                         <label for="email">Email (required)</label>
@@ -148,7 +148,7 @@
                     </div>
                     <div class="col-12 mb-4 contact-field message">
                         <label for="message">Message (required, at least 2 characters)</label>
-                        <textarea id="message" name="message" type="text" class="form-control message-input" placeholder="Message" aria-label="Message" required></textarea>
+                        <textarea id="message" name="message" minlength="2" type="text" class="form-control message-input" placeholder="Message" aria-label="Message" required></textarea>
                     </div>
                     <input type="submit" value="Submit" class="btn btn-success">
                 </form>
