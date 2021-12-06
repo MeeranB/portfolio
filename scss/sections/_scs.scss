@@ -1,9 +1,15 @@
 @use '../custom' as *;
 
 .scs-header {
+  padding: 28px 0;
+  @media (min-width: map-get($grid-breakpoints, "md")) {
+    padding: 34px 0;
+  }
+  @media (min-width: map-get($grid-breakpoints, "lg")) {
     padding: 56px 0;
-    background-color: black;
-    border-bottom: 3px solid #f39c12;
+  }
+  background-color: black;
+  border-bottom: 3px solid #f39c12;
 }
 
 .scs-content {

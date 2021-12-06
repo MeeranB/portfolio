@@ -10501,9 +10501,19 @@ form label {
 }
 
 .examples-header {
-  padding: 56px 0;
+  padding: 28px 0;
   background-color: black;
   border-bottom: 3px solid #f39c12;
+}
+@media (min-width: 768px) {
+  .examples-header {
+    padding: 34px 0;
+  }
+}
+@media (min-width: 992px) {
+  .examples-header {
+    padding: 56px 0;
+  }
 }
 
 .examples-content {
@@ -10511,9 +10521,19 @@ form label {
 }
 
 .about-header {
-  padding: 56px 0;
+  padding: 28px 0;
   background-color: black;
   border-bottom: 3px solid #f39c12;
+}
+@media (min-width: 768px) {
+  .about-header {
+    padding: 34px 0;
+  }
+}
+@media (min-width: 992px) {
+  .about-header {
+    padding: 56px 0;
+  }
 }
 
 .about-content {
@@ -10531,9 +10551,19 @@ form label {
 }
 
 .scs-header {
-  padding: 56px 0;
+  padding: 28px 0;
   background-color: black;
   border-bottom: 3px solid #f39c12;
+}
+@media (min-width: 768px) {
+  .scs-header {
+    padding: 34px 0;
+  }
+}
+@media (min-width: 992px) {
+  .scs-header {
+    padding: 56px 0;
+  }
 }
 
 .scs-content {
