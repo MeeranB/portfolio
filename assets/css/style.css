@@ -10466,7 +10466,9 @@ main {
   padding: 1rem 2rem;
 }
 .contact-form-container .message-input {
-  height: 10rem;
+  display: inline-block;
+  padding: 15px 10px;
+  line-height: 3em;
 }
 .contact-form-container .btn {
   display: block;
