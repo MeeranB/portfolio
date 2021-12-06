@@ -65,13 +65,16 @@
     &__link:hover {
         color: white;
     }
+    &__logo {
+      font-size: 2.5rem;
+    }
+    span[class^="icon-"] {
+      font-size: 2rem;
+      color: #f39c12;
+  }
     @media (min-width: map-get($grid-breakpoints, "md" )) {
         &__logo {
             font-size: 3rem;
-        }
-        span[class^="icon-"] {
-            font-size: 2rem;
-            color: #f39c12;
         }
     }
     @media (min-width: map-get($grid-breakpoints, "lg")) {

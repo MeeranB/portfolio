@@ -9996,13 +9996,16 @@ h3 {
 .sidebar__link:hover {
   color: white;
 }
+.sidebar__logo {
+  font-size: 2.5rem;
+}
+.sidebar span[class^=icon-] {
+  font-size: 2rem;
+  color: #f39c12;
+}
 @media (min-width: 768px) {
   .sidebar__logo {
     font-size: 3rem;
-  }
-  .sidebar span[class^=icon-] {
-    font-size: 2rem;
-    color: #f39c12;
   }
 }
 @media (min-width: 992px) {
@@ -10248,6 +10251,8 @@ main {
 }
 .sidebar__icons a {
   text-decoration: none;
+  color: #f39c12;
+  font-size: 1rem;
 }
 .sidebar__icons .icon-linkedin:hover, .sidebar__icons .icon-github:hover {
   color: white;
@@ -10305,6 +10310,7 @@ body {
 }
 
 .hero-text {
+  padding: 0 3rem;
   margin-top: auto;
 }
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -10495,7 +10501,7 @@ form label {
 }
 
 .examples-header {
-  padding: 40px 0px;
+  padding: 56px 0;
   background-color: black;
   border-bottom: 3px solid #f39c12;
 }
@@ -10505,7 +10511,7 @@ form label {
 }
 
 .about-header {
-  padding: 40px 0px;
+  padding: 56px 0;
   background-color: black;
   border-bottom: 3px solid #f39c12;
 }
@@ -10525,7 +10531,7 @@ form label {
 }
 
 .scs-header {
-  padding: 40px 0px;
+  padding: 56px 0;
   background-color: black;
   border-bottom: 3px solid #f39c12;
 }
