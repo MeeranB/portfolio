@@ -10084,7 +10084,7 @@ h3 {
 }
 
 p {
-  color: #f39c12;
+  color: white;
 }
 
 .about-header .about-title {
@@ -10206,7 +10206,7 @@ main {
   overflow-y: hidden;
   z-index: 1;
   top: 0;
-  background-color: #050505;
+  background-color: #141414;
   overflow-x: hidden;
   border-right: solid 3px #f39c12;
   min-width: 200px;
@@ -10216,6 +10216,7 @@ main {
 .sidebar__linkcontainer {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .sidebar__link, .sidebar__logo {
   text-decoration: none;
@@ -10263,7 +10264,7 @@ main {
   border-bottom: 3px solid #f39c12;
 }
 .sidebar__link {
-  padding: 10px 8px 10px 16px;
+  padding: 10px 8px 10px 0px;
 }
 .sidebar__logo {
   padding: 6px 8px;
@@ -10292,7 +10293,7 @@ body {
 }
 
 .page-container {
-  background-color: black;
+  background-color: #141414;
   height: 100%;
 }
 
@@ -10330,13 +10331,13 @@ body {
 }
 
 main {
-  background-color: black;
+  background-color: #141414;
 }
 
 .projects-section {
   height: auto;
   width: 90%;
-  background-color: black;
+  background-color: #141414;
   padding-top: 30px;
   padding-bottom: 30px;
 }
@@ -10478,7 +10479,7 @@ form .error {
 
 .examples-header {
   padding: 28px 0;
-  background-color: black;
+  background-color: #141414;
   border-bottom: 3px solid #f39c12;
 }
 @media (min-width: 768px) {
@@ -10493,12 +10494,15 @@ form .error {
 }
 
 .examples-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
   padding: 30px 2em;
 }
 
 .about-header {
   padding: 28px 0;
-  background-color: black;
+  background-color: #141414;
   border-bottom: 3px solid #f39c12;
 }
 @media (min-width: 768px) {
@@ -10513,6 +10517,9 @@ form .error {
 }
 
 .about-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
   padding: 30px 2em;
 }
 .about-content .base-desc {
@@ -10528,7 +10535,7 @@ form .error {
 
 .scs-header {
   padding: 28px 0;
-  background-color: black;
+  background-color: #141414;
   border-bottom: 3px solid #f39c12;
 }
 @media (min-width: 768px) {
@@ -10543,6 +10550,9 @@ form .error {
 }
 
 .scs-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
   padding: 30px 2em;
 }
 

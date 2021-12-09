@@ -8,10 +8,13 @@
     @media (min-width: map-get($grid-breakpoints, "lg")) {
       padding: 56px 0;
     }
-    background-color: black;
+    background-color: #141414;
     border-bottom: 3px solid #f39c12;
 }
 
 .examples-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
     padding: 30px 2em;
 }
