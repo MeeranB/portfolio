@@ -65,13 +65,16 @@
     &__link:hover {
         color: white;
     }
+    &__logo {
+      font-size: 2.5rem;
+    }
+    span[class^="icon-"] {
+      font-size: 2rem;
+      color: #f39c12;
+  }
     @media (min-width: map-get($grid-breakpoints, "md" )) {
         &__logo {
             font-size: 3rem;
-        }
-        span[class^="icon-"] {
-            font-size: 2rem;
-            color: #f39c12;
         }
     }
     @media (min-width: map-get($grid-breakpoints, "lg")) {
@@ -144,7 +147,7 @@
 }
 
 p {
-    color: #f39c12;
+    color: white;
 }
 
 .about-header {
@@ -172,6 +175,15 @@ p {
   .examples-title {
     text-align: center;
     color: #f39c12;;
+  }
+}
+
+.examples-content {
+  h2 {
+    color: #f39c12;
+  }
+  code {
+    color: white;
   }
 }
 

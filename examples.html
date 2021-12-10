@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meeran – Portfolio | Code Examples">
     <title>Meeran - Portfolio</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
 </head>
 <body>
     <div class="page-container">
@@ -14,13 +19,13 @@
             <span class="title">Menu</span>
         </div>
         <nav class="sidebar">
-            <a class="sidebar__logo text-uppercase text-center" href="/index.html#">mb</a>
+            <a class="sidebar__logo text-uppercase text-center" href="/">mb</a>
             <div class="sidebar__linkcontainer">
                 <a class="sidebar__link" href="/about.html"><span class="sidebar__link__text">About Me</span></a>
-                <a class="sidebar__link" href="/index.html#projects"><span class="sidebar__link__text">My Portfolio</span></a>
+                <a class="sidebar__link" href="/#projects"><span class="sidebar__link__text">My Portfolio</span></a>
                 <a class="sidebar__link" href="/examples.html"><span class="sidebar__link__text">Coding Examples</span></a>
                 <a class="sidebar__link" href="/scs.html"><span class="sidebar__link__text">SCS Scheme</span></a>
-                <a class="sidebar__link" href="/index.html#contact"><span class="sidebar__link__text">Contact Me</span></a>
+                <a class="sidebar__link" href="/#contact"><span class="sidebar__link__text">Contact Me</span></a>
             </div>
             <div class="sidebar__icons">
                 <a href="https://www.linkedin.com/in/meeran-bala-kumaran-3880081b3/"><span class="icon-linkedin"></span></a>
@@ -32,9 +37,110 @@
                 <header class="examples-header">
                     <h1 class="examples-title">Coding Examples</h1>
                 </header>
-                <section class="examples-content">
-                    <p class="main-text">Coming soon</p>
-                </section>
+                <div class="content-container">
+                    <article class="examples-content">
+                        <div class="article-head">
+                            <h2><span>Reusable cards with hover effect</span></h2>
+                            <span class="note-container">(trivial style declarations have been excluded for brevity)</span>
+                        </div>
+                        <div class="demo-gif-container">
+                            <img src="/assets/images/info-card-demo.gif" alt="GIF demonstrating hover effect on a card" class="demo-gif">
+                        </div>
+                        <a href="https://gist.github.com/MeeranB/440d8bf3433b5188bbef7a0965a4d940" class="gist-button button" target="_blank">View code</a>
+                        <details>
+                            <summary>View HTML</summary>
+                            <pre class="code">
+<code>&lt;div class=&quot;info-card info-card--apps&quot;&gt;</code>
+<code>    &lt;div class=&quot;info-link&quot;&gt;</code>
+<code>        &lt;div class=&quot;icon-container icon-container--apps&quot;&gt;</code>
+<code>            &lt;span class=&quot;card-icon icon-apps&quot;&gt;&lt;/span&gt;</code>
+<code>        &lt;/div&gt;</code>
+<code>        &lt;div class=&quot;info-title-container&quot;&gt;</code>
+<code>            &lt;span class=&quot;h2&quot;&gt;Bespoke Software&lt;/span&gt;</code>
+<code>        &lt;/div&gt;</code>
+<code>        &lt;div class=&quot;info-subtitle-container&quot;&gt;</code>
+<code>            &lt;span class=&quot;p&quot;&gt;</code>
+<code>                &lt;!-- Card content goes here --&gt;</code>
+<code>            &lt;/span&gt;</code>
+<code>        &lt;/div&gt;</code>
+<code>        &lt;div class=&quot;btn-container&quot;&gt;</code>
+<code>            &lt;span class=&quot;btn btn-software&quot;&gt;&lt;span&gt;Read More&lt;/span&gt;&lt;/span&gt;</code>
+<code>        &lt;/div&gt;</code>
+<code>    &lt;/div&gt;</code>
+<code>&lt;/div&gt;</code>
+                            </pre>
+                        </details>
+                        <details>
+                            <summary>View CSS</summary>
+                            <pre class="code">
+<code>.info-card {</code>
+<code>    box-shadow: 0 3px 35px rgb(0 0 0 / 10%);</code>
+<code>    height: 100%;</code>
+<code>    .btn-container {</code>
+<code>        margin-top: auto;</code>
+<code>    }</code>
+<code>    .info-link {</code>
+<code>        display: flex;</code>
+<code>        flex-direction: column;</code>
+<code>        height: 100%;</code>
+<code>    }</code>
+<code>    .icon-container {</code>
+<code>        text-align: center;</code>
+<code>        position: relative;</code>
+<code>        .card-icon {</code>
+<code>            color: white;</code>
+<code>        }</code>
+<code>        .card-icon::after {</code>
+<code>            content: '';</code>
+<code>            position: absolute;</code>
+<code>            top: 0;</code>
+<code>            left: calc(50% - 30px);</code>
+<code>            width: 60px;</code>
+<code>            height: 60px;</code>
+<code>            border-radius: 50%;</code>
+<code>        }</code>
+<code>        .card-icon::before {</code>
+<code class="optional">            //Places the icon over it's container</code>
+<code>            position: relative;</code>
+<code>            z-index: 1;</code>
+<code>        }</code>
+<code>    }</code>
+<code>    &amp;:hover {</code>
+<code>        //Remove color from elements</code>
+<code>        .h2,</code>
+<code>        .p {</code>
+<code>            color: white;</code>
+<code>        }</code>
+<code>        .h2::after,</code>
+<code>        .btn,</code>
+<code>        .card-icon::after {</code>
+<code>            background-color: white;</code>
+<code>        }</code>
+<code>        .btn {</code>
+<code>            border-color: white;</code>
+<code>        }</code>
+<code>    }</code>
+<code>    @each $card-type, $color in $icon-colorscheme {</code>
+<code class="optional">        //Invert color scheme for each info-card</code>
+<code>        &amp;--#{$card-type}:hover {</code>
+<code class="optional">            //Sets info-card background color</code>
+<code>            background-color: $color;</code>
+<code>            .btn,</code>
+<code>            .icon-#{$card-type}::before {</code>
+<code class="optional">                //Sets icon and buttons hover font</code>
+<code>                color: $color;</code>
+<code>            }</code>
+<code>        }</code>
+<code>        .icon-#{$card-type}::after {</code>
+<code>            //Sets icon circle correctly</code>
+<code>            background-color: $color;</code>
+<code>        }</code>
+<code>    }</code>
+<code>}</code>
+                            </pre>
+                        </details>
+                    </article>
+                </div>
             </div>
         </main>
     </div>

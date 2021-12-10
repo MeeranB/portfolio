@@ -1,12 +1,21 @@
 @use '../custom' as *;
 
 .scs-header {
-    padding: 40px 0px;
-    background-color: black;
-    border-bottom: 3px solid #f39c12;
+  padding: 28px 0;
+  @media (min-width: map-get($grid-breakpoints, "md")) {
+    padding: 34px 0;
+  }
+  @media (min-width: map-get($grid-breakpoints, "lg")) {
+    padding: 56px 0;
+  }
+  background-color: #141414;
+  border-bottom: 3px solid #f39c12;
 }
 
 .scs-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
     padding: 30px 2em;
 }
 
