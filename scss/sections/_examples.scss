@@ -12,9 +12,26 @@
     border-bottom: 3px solid #f39c12;
 }
 
+.content-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  padding: 30px 2em;
+}
+
 .examples-content {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
-    padding: 30px 2em;
+  .article-head, pre, .note-container {
+    border-radius: 25px;
+    background: black;
+    padding: 20px;
+  }
+  h2 {
+    display: inline-block;
+  }
+  .note-container {
+    color: #f39c12;
+  }
 }

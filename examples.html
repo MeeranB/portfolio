@@ -37,9 +37,85 @@
                 <header class="examples-header">
                     <h1 class="examples-title">Coding Examples</h1>
                 </header>
-                <section class="examples-content">
-                    <p class="main-text">Coming soon</p>
-                </section>
+                <div class="content-container">
+                    <article class="examples-content">
+                        <div class="article-head">
+                            <h2><span>Reusable cards with hover effect</span></h2>
+                            <span class="note-container">Trivial style declarations have been excluded for brevity</span>
+                        </div>
+                        <pre>
+                            <code>
+.info-card {
+    border-radius: 3px;
+    box-shadow: 0 3px 35px rgb(0 0 0 / 10%);
+    padding: 30px;
+    height: 100%;
+    .btn-container {
+        margin-top: auto;
+    }
+    .info-link {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .icon-container {
+        text-align: center;
+        position: relative;
+        .card-icon {
+            color: white;
+        }
+        .card-icon::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: calc(50% - 30px);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+        .card-icon::before {
+            //This rule places the icon font above it's containing span
+            position: relative;
+            z-index: 1;
+        }
+    }
+    &amp;:hover {
+        cursor: pointer;
+        //These styles remove color from elements that lose color on hover
+        .h2,
+        .p {
+            color: white;
+        }
+        .h2::after,
+        .btn,
+        .card-icon::after {
+            background-color: white;
+        }
+        .btn {
+            border-color: white;
+        }
+    }
+    @each $card-type, $color in $icon-colorscheme {
+        //These styles apply the respective inverted color scheme to each info-card
+        &amp;--#{$card-type}:hover {
+            //Sets info-card background color
+            background-color: $color;
+            .btn,
+            .icon-#{$card-type}::before {
+                //Sets icon and buttons hover font
+                color: $color;
+            }
+        }
+        .icon-#{$card-type}::after {
+            //Sets icon circle correctly
+            background-color: $color;
+        }
+    }
+}
+                            </code>
+                        </pre>
+                    </article>
+                </div>
             </div>
         </main>
     </div>

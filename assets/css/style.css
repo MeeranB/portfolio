@@ -10107,6 +10107,13 @@ p {
   color: #f39c12;
 }
 
+.examples-content h2 {
+  color: #f39c12;
+}
+.examples-content code {
+  color: white;
+}
+
 .scs-header .scs-title {
   text-align: center;
   color: #f39c12;
@@ -10493,11 +10500,28 @@ form .error {
   }
 }
 
-.examples-content {
+.content-container {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
   padding: 30px 2em;
+}
+
+.examples-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+.examples-content .article-head, .examples-content pre, .examples-content .note-container {
+  border-radius: 25px;
+  background: black;
+  padding: 20px;
+}
+.examples-content h2 {
+  display: inline-block;
+}
+.examples-content .note-container {
+  color: #f39c12;
 }
 
 .about-header {
