@@ -10514,14 +10514,81 @@ form .error {
 }
 .examples-content .article-head, .examples-content pre, .examples-content .note-container {
   border-radius: 25px;
-  background: black;
   padding: 20px;
 }
 .examples-content h2 {
   display: inline-block;
 }
 .examples-content .note-container {
+  display: none;
+  padding: 20px 20px 20px 0;
   color: #f39c12;
+}
+@media (min-width: 576px) {
+  .examples-content .note-container {
+    display: block;
+  }
+}
+.examples-content .demo-gif-container {
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 576px) {
+  .examples-content .gist-button {
+    display: none;
+  }
+}
+.examples-content .demo-gif {
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .examples-content .demo-gif {
+    width: 60%;
+  }
+}
+@media (min-width: 768px) {
+  .examples-content .demo-gif {
+    width: 30%;
+  }
+}
+.examples-content details {
+  display: none;
+  border: 1px solid #f39c12;
+  border-radius: 4px;
+  padding: 0.5em 0.5em;
+}
+@media (min-width: 576px) {
+  .examples-content details {
+    display: inline-block;
+  }
+}
+.examples-content summary {
+  color: #f39c12;
+}
+.examples-content .optional {
+  display: none;
+}
+@media (min-width: 992px) {
+  .examples-content .optional {
+    display: inline;
+  }
+}
+.examples-content pre.code {
+  white-space: pre-wrap;
+}
+.examples-content pre.code:before {
+  counter-reset: listing;
+}
+.examples-content pre.code code {
+  counter-increment: listing;
+}
+.examples-content pre.code code:before {
+  content: counter(listing) ".   ";
+  display: inline-block;
+  width: 8em;
+  padding-left: auto;
+  margin-left: auto;
+  text-align: right;
 }
 
 .about-header {

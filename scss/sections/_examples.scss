@@ -25,13 +25,70 @@
   row-gap: 2rem;
   .article-head, pre, .note-container {
     border-radius: 25px;
-    background: black;
     padding: 20px;
   }
   h2 {
     display: inline-block;
   }
   .note-container {
+    display:none;
+    @media (min-width: map-get($grid-breakpoints, "sm")) {
+      display: block;
+    }
+    padding: 20px 20px 20px 0;
     color: #f39c12;
+  }
+  .demo-gif-container {
+    display: flex;
+    justify-content: center;
+  }
+  .gist-button {
+    @media (min-width: map-get($grid-breakpoints, "sm")) {
+      display:none;
+    }
+  }
+  .demo-gif {
+    width: 100%;
+    @media (min-width: map-get($grid-breakpoints, "sm")) {
+      width: 60%;
+    }
+    @media (min-width: map-get($grid-breakpoints, "md")) {
+      width: 30%;
+    }
+  }
+  details {
+    display: none;
+    @media (min-width: map-get($grid-breakpoints, "sm")) {
+      display: inline-block;
+    }
+    border: 1px solid #f39c12;
+    border-radius: 4px;
+    padding: .5em .5em;
+  }
+  summary {
+    color: #f39c12;
+  }
+  .optional {
+    display: none;
+    @media (min-width: map-get($grid-breakpoints, "lg")) {
+      display: inline;
+    }
+  }
+  pre.code {
+    white-space: pre-wrap;
+  }
+  pre.code:before {
+      counter-reset: listing;
+  }
+  pre.code code {
+      counter-increment: listing;
+  }
+  pre.code code:before {
+    content: counter(listing) ".   ";
+    display: inline-block;
+    width: 8em;
+    padding-left: auto;
+    margin-left: auto;
+    text-align: right;
   }
 }

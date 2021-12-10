@@ -41,79 +41,104 @@
                     <article class="examples-content">
                         <div class="article-head">
                             <h2><span>Reusable cards with hover effect</span></h2>
-                            <span class="note-container">Trivial style declarations have been excluded for brevity</span>
+                            <span class="note-container">(trivial style declarations have been excluded for brevity)</span>
                         </div>
-                        <pre>
-                            <code>
-.info-card {
-    border-radius: 3px;
-    box-shadow: 0 3px 35px rgb(0 0 0 / 10%);
-    padding: 30px;
-    height: 100%;
-    .btn-container {
-        margin-top: auto;
-    }
-    .info-link {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
-    .icon-container {
-        text-align: center;
-        position: relative;
-        .card-icon {
-            color: white;
-        }
-        .card-icon::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: calc(50% - 30px);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-        }
-        .card-icon::before {
-            //This rule places the icon font above it's containing span
-            position: relative;
-            z-index: 1;
-        }
-    }
-    &amp;:hover {
-        cursor: pointer;
-        //These styles remove color from elements that lose color on hover
-        .h2,
-        .p {
-            color: white;
-        }
-        .h2::after,
-        .btn,
-        .card-icon::after {
-            background-color: white;
-        }
-        .btn {
-            border-color: white;
-        }
-    }
-    @each $card-type, $color in $icon-colorscheme {
-        //These styles apply the respective inverted color scheme to each info-card
-        &amp;--#{$card-type}:hover {
-            //Sets info-card background color
-            background-color: $color;
-            .btn,
-            .icon-#{$card-type}::before {
-                //Sets icon and buttons hover font
-                color: $color;
-            }
-        }
-        .icon-#{$card-type}::after {
-            //Sets icon circle correctly
-            background-color: $color;
-        }
-    }
-}
-                            </code>
-                        </pre>
+                        <div class="demo-gif-container">
+                            <img src="/assets/images/info-card-demo.gif" alt="GIF demonstrating hover effect on a card" class="demo-gif">
+                        </div>
+                        <a href="https://gist.github.com/MeeranB/440d8bf3433b5188bbef7a0965a4d940" class="gist-button button" target="_blank">View code</a>
+                        <details>
+                            <summary>View HTML</summary>
+                            <pre class="code">
+<code>&lt;div class=&quot;info-card info-card--apps&quot;&gt;</code>
+<code>    &lt;div class=&quot;info-link&quot;&gt;</code>
+<code>        &lt;div class=&quot;icon-container icon-container--apps&quot;&gt;</code>
+<code>            &lt;span class=&quot;card-icon icon-apps&quot;&gt;&lt;/span&gt;</code>
+<code>        &lt;/div&gt;</code>
+<code>        &lt;div class=&quot;info-title-container&quot;&gt;</code>
+<code>            &lt;span class=&quot;h2&quot;&gt;Bespoke Software&lt;/span&gt;</code>
+<code>        &lt;/div&gt;</code>
+<code>        &lt;div class=&quot;info-subtitle-container&quot;&gt;</code>
+<code>            &lt;span class=&quot;p&quot;&gt;</code>
+<code>                &lt;!-- Card content goes here --&gt;</code>
+<code>            &lt;/span&gt;</code>
+<code>        &lt;/div&gt;</code>
+<code>        &lt;div class=&quot;btn-container&quot;&gt;</code>
+<code>            &lt;span class=&quot;btn btn-software&quot;&gt;&lt;span&gt;Read More&lt;/span&gt;&lt;/span&gt;</code>
+<code>        &lt;/div&gt;</code>
+<code>    &lt;/div&gt;</code>
+<code>&lt;/div&gt;</code>
+                            </pre>
+                        </details>
+                        <details>
+                            <summary>View CSS</summary>
+                            <pre class="code">
+<code>.info-card {</code>
+<code>    box-shadow: 0 3px 35px rgb(0 0 0 / 10%);</code>
+<code>    height: 100%;</code>
+<code>    .btn-container {</code>
+<code>        margin-top: auto;</code>
+<code>    }</code>
+<code>    .info-link {</code>
+<code>        display: flex;</code>
+<code>        flex-direction: column;</code>
+<code>        height: 100%;</code>
+<code>    }</code>
+<code>    .icon-container {</code>
+<code>        text-align: center;</code>
+<code>        position: relative;</code>
+<code>        .card-icon {</code>
+<code>            color: white;</code>
+<code>        }</code>
+<code>        .card-icon::after {</code>
+<code>            content: '';</code>
+<code>            position: absolute;</code>
+<code>            top: 0;</code>
+<code>            left: calc(50% - 30px);</code>
+<code>            width: 60px;</code>
+<code>            height: 60px;</code>
+<code>            border-radius: 50%;</code>
+<code>        }</code>
+<code>        .card-icon::before {</code>
+<code class="optional">            //Places the icon over it's container</code>
+<code>            position: relative;</code>
+<code>            z-index: 1;</code>
+<code>        }</code>
+<code>    }</code>
+<code>    &amp;:hover {</code>
+<code>        //Remove color from elements</code>
+<code>        .h2,</code>
+<code>        .p {</code>
+<code>            color: white;</code>
+<code>        }</code>
+<code>        .h2::after,</code>
+<code>        .btn,</code>
+<code>        .card-icon::after {</code>
+<code>            background-color: white;</code>
+<code>        }</code>
+<code>        .btn {</code>
+<code>            border-color: white;</code>
+<code>        }</code>
+<code>    }</code>
+<code>    @each $card-type, $color in $icon-colorscheme {</code>
+<code class="optional">        //Invert color scheme for each info-card</code>
+<code>        &amp;--#{$card-type}:hover {</code>
+<code class="optional">            //Sets info-card background color</code>
+<code>            background-color: $color;</code>
+<code>            .btn,</code>
+<code>            .icon-#{$card-type}::before {</code>
+<code class="optional">                //Sets icon and buttons hover font</code>
+<code>                color: $color;</code>
+<code>            }</code>
+<code>        }</code>
+<code>        .icon-#{$card-type}::after {</code>
+<code>            //Sets icon circle correctly</code>
+<code>            background-color: $color;</code>
+<code>        }</code>
+<code>    }</code>
+<code>}</code>
+                            </pre>
+                        </details>
                     </article>
                 </div>
             </div>
