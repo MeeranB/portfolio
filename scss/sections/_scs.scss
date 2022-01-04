@@ -17,6 +17,9 @@
     flex-direction: column;
     row-gap: 2rem;
     padding: 30px 2em;
+    ul li {
+      color: white;
+    }
 }
 
 .treehouse, .netmatters, .base-desc, .treehouse-score {

@@ -51,3 +51,10 @@ form {
         border-width: 4px;
     }
 }
+
+.main-link {
+    color: #f39c12;
+    &:hover {
+        color: white;
+    }
+}

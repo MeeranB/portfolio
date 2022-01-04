@@ -10363,7 +10363,7 @@ main {
   padding: 8rem 0 0;
   border-radius: 1rem;
   overflow: hidden;
-  transition: transform 500ms ease-in-out;
+  transition: transform 400ms ease-in-out;
 }
 .project-card:hover, .project-card:focus-within {
   transform: scale(1.02);
@@ -10373,14 +10373,13 @@ main {
 }
 .project-card:hover .project-card-content, .project-card:focus-within .project-card-content {
   transform: translateY(0);
-  transition-delay: 500ms;
+  transition-delay: 200ms;
 }
 .project-card:focus-within .project-card-content {
   transition-duration: 0ms;
 }
 .project-card:hover .project-card-content > *:not(.project-card-title), .project-card:focus-within .project-card-content > *:not(.project-card-title) {
   opacity: 1;
-  transition-delay: 500ms;
 }
 
 .project-card-content {
@@ -10388,11 +10387,11 @@ main {
   padding: var(--padding);
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3) 20%, black);
   transform: translateY(60%);
-  transition: transform 500ms ease-in-out;
+  transition: transform 400ms ease-in-out;
 }
 .project-card-content > *:not(.project-card-title) {
   opacity: 0;
-  transition: opacity 500ms linear;
+  transition: opacity 400ms ease-in-out;
 }
 
 .project-card-title::after {
@@ -10405,7 +10404,7 @@ main {
   background-color: #f39c12;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 500ms ease-in-out;
+  transition: transform 200ms ease-in-out;
 }
 
 .project-card-title {
@@ -10482,6 +10481,13 @@ form .error {
   color: red;
   border-color: red;
   border-width: 4px;
+}
+
+.main-link {
+  color: #f39c12;
+}
+.main-link:hover {
+  color: white;
 }
 
 .examples-header {
@@ -10617,6 +10623,9 @@ form .error {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+.about-content ul li {
+  color: white;
+}
 
 .certhe-desc, .base-desc, .practical-experience {
   border-radius: 25px;
@@ -10645,6 +10654,9 @@ form .error {
   flex-direction: column;
   row-gap: 2rem;
   padding: 30px 2em;
+}
+.scs-content ul li {
+  color: white;
 }
 
 .treehouse, .netmatters, .base-desc, .treehouse-score {
