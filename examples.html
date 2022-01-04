@@ -71,7 +71,7 @@
                             </pre>
                         </details>
                         <details>
-                            <summary>View CSS</summary>
+                            <summary>View SCSS</summary>
                             <pre class="code">
 <code>.info-card {</code>
 <code>    box-shadow: 0 3px 35px rgb(0 0 0 / 10%);</code>
@@ -138,6 +138,37 @@
 <code>    }</code>
 <code>}</code>
                             </pre>
+                        </details>
+                        <details>
+                            <summary>View Explanation</summary>
+                            <br>
+                            <p>
+                                These SCSS rules provide an extendable framework to create CSS classes to style a card with the demonstrated hover effect 
+                            </p>
+                            <span class="explanation-title">The SASS each-loop</span>
+                            <p>
+                                The extendable element of the SCSS rules is the ability to create other CSS modifier classes to provide a different color scheme for various parts of the given card. These modifier classes, info-card--apps and icon-container--apps can be seen on lines 1 and 3 of the HTML
+                            </p>
+                            <p>
+                                In order to generate a new color scheme for a new card, we add a new pair to the $icon-colorscheme SASS map, where the key is a label for the color scheme and where the value is the color to be applied to the card. For example, adding the pair ("display": #4183d7") to the map generates the classes info-card--display and icon-container--display through the each loop from lines 48 to 63 of the SCSS code.
+                            </p>
+                            <p>
+                                The newly created modifier classes provide a hover state for a card that changes the card background color, the button and icon's text color, and the icon container's background to the respective color scheme within the loop by parsing the ("display": #4183d7") pair and using "display" as the value for $card-type and "#4183d7" as the hex value for $color.
+                            </p>
+                            <span class="explanation-title">Other notable features</span>
+                            <p>
+                                The rules outside of the each loop represent card features that do not change when a new color scheme is provided
+                            </p>
+                            <p>
+                                Line 22 demonstrates a common technique for centering elements. By shifting the span behind the icon, represented by ".card-icon::after", using the left property by 50% we place the span such that it begins half the width of the containing element, in this case this is the width of the card itself.
+                                This places the span such that the left edge is centered, rather than centering the span itself. In order to correct this we use calc to subtract half of the width of the span from our current left position, this shifts the span to the right and sets the center of the span to the horizontal center of the card itself
+                            </p>
+                            <p>
+                                Lines 35 to 38 of the SCSS code represent the coloring of the card title and card paragraph text to white on hover
+                            </p>
+                            <p>
+                                Lines 39 to 43 represent the coloring of the title separating span, card button and icon container's to white on hover, and lines 44 to 46 affect the button's border.
+                            </p>
                         </details>
                     </article>
                 </div>

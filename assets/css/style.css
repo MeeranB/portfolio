@@ -10596,6 +10596,10 @@ form .error {
   margin-left: auto;
   text-align: right;
 }
+.examples-content .explanation-title {
+  font-size: 30;
+  color: #f39c12;
+}
 
 .about-header {
   padding: 28px 0;
