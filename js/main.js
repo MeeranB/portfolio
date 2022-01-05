@@ -1,7 +1,6 @@
 // Fix sidebar styling on smaller viewport widths.
 // Sidebar menu has hover options and is shorter
 // Fix issue with project cards appearing over sidebar
-console.log("test");
 
 const menuBtn = $(".menu-btn");
 const sideBar = $(".sidebar");
@@ -95,4 +94,13 @@ typewriter
     .pauseFor(2500)
     .start();
 
-$("#contact-form").validate();
+console.log("test3");
+
+$("#contact-form").validate({
+    submitHandler: function (form) {
+        $(".success-prompt").text("Message submitted successfully");
+    },
+    invalidHandler: function (form) {
+        $(".success-prompt").text("");
+    },
+});

@@ -84,14 +84,15 @@
                         <input id="email" name="email" type="email" class="form-control" placeholder="Email" aria-label="Email" required>
                     </div>
                     <div class="col-12 col-lg-6 pt-3">
-                        <label for="subject">Subject</label>
-                        <input id="subject" name="subject" type="text" class="form-control" placeholder="Subject" aria-label="Subject">
+                        <label for="subject">Subject*</label>
+                        <input id="subject" name="subject" minlength="2" type="text" class="form-control" placeholder="Subject" aria-label="Subject" required>
                     </div>
                     <div class="col-12 mb-4 message pt-3">
                         <label for="message">Message*</label>
                         <textarea id="message" name="message" minlength="2" class="form-control message-input" placeholder="Message" aria-label="Message" required></textarea>
                     </div>
-                    <input type="submit" value="Submit" class="btn btn-success col-4">
+                    <input id="contact-submit" type="submit" value="Submit" class="btn btn-success col-4">
+                    <p class="success-prompt"></p>
                 </form>
             </div>
             <!-- /contact -->

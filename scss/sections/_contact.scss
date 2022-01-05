@@ -15,10 +15,12 @@
         display: block;
         width: 30%;
         margin-left: 1rem;
+        margin-right: 1rem;
     }
 }
 
 .contact-prompt {
+    text-align: center;
     padding-left: 1rem;
     padding-right: 1rem;
 }
@@ -57,4 +59,9 @@ form {
     &:hover {
         color: white;
     }
+}
+
+.success-prompt {
+    display: block;
+    color: green;
 }

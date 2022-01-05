@@ -10357,8 +10357,11 @@ main {
 }
 
 .project-card {
-  background-image: url(/assets/images/placeholderproject_1.jpeg);
+  background-image: url(/assets/images/netmatters-preview.png);
   background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  opacity: 0.9;
   font-family: sans-serif;
   padding: 8rem 0 0;
   border-radius: 1rem;
@@ -10385,7 +10388,7 @@ main {
 .project-card-content {
   --padding: 1.5rem;
   padding: var(--padding);
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3) 20%, black);
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7) 20%, black);
   transform: translateY(60%);
   transition: transform 400ms ease-in-out;
 }
@@ -10449,9 +10452,11 @@ main {
   display: block;
   width: 30%;
   margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .contact-prompt {
+  text-align: center;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -10488,6 +10493,11 @@ form .error {
 }
 .main-link:hover {
   color: white;
+}
+
+.success-prompt {
+  display: block;
+  color: green;
 }
 
 .examples-header {
