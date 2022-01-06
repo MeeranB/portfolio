@@ -24,9 +24,17 @@ body {
     background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../../assets/images/hero2.jpeg);
     background-size: cover;
     background-position: center;
+    .overlay {
+        position:absolute;
+        background-color: black;
+        opacity: 0.5;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .hero-text {
+    position: relative;
     padding: 0 3rem;
     margin-top: auto;
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -35,6 +43,7 @@ body {
 }
 
 .scroll-prompt--down {
+    position: relative;
     text-decoration: none;
     color: #f39c12;
     &:hover {

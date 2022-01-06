@@ -10316,8 +10316,16 @@ body {
   background-size: cover;
   background-position: center;
 }
+.hero-image .overlay {
+  position: absolute;
+  background-color: black;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+}
 
 .hero-text {
+  position: relative;
   padding: 0 3rem;
   margin-top: auto;
 }
@@ -10328,6 +10336,7 @@ body {
 }
 
 .scroll-prompt--down {
+  position: relative;
   text-decoration: none;
   color: #f39c12;
   margin-top: auto;

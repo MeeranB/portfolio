@@ -58,6 +58,15 @@ $(menuBtn).on("click", () => {
     sideBar.trigger("sidebar:open");
 });
 
+$("#contact__link").on("click", () => {
+    checkWidth();
+    if (windowSize <= 767) {
+        menuBtn.css("display", "flex");
+        sideBar.trigger("sidebar:close", [{ speed: 0 }]);
+        main.css("margin-left", 0);
+    }
+});
+
 sideBar.on("sidebar:closed", () => {
     menuBtn.css("display", "flex");
 });
@@ -81,11 +90,10 @@ const typewriter = new Typewriter(heroSubtitle[0], {
 
 typewriter.pauseFor(1000).typeString("I am a web developer").pauseFor(1500).deleteChars(13).typeString("web designer").pauseFor(1500).deleteChars(18).changeDelay(60).typeString(" could be an invaluable asset to <strong> your </strong> business!").pauseFor(2500).start();
 
-console.log("test3");
-
 $("#contact-form").validate({
     submitHandler: function (form) {
         $(".success-prompt").text("Message submitted successfully");
+        $("#contact-form").trigger("reset");
     },
     invalidHandler: function (form) {
         $(".success-prompt").text("");
