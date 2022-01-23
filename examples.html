@@ -170,6 +170,92 @@
                                 Lines 39 to 43 represent the coloring of the title separating span, card button and icon container's to white on hover, and lines 44 to 46 affect the button's border.
                             </p>
                         </details>
+                        <div class="article-head">
+                            <h2><span>SQL Query</span></h2>
+                            <span class="note-container">A demonstration of SQL understanding using the below schema</span>
+                        </div>
+                        <div class="demo-gif-container">
+                            <img src="/assets/images/movie-database.png" alt="Movie database schema" class="demo-schema">
+                        </div>
+                        <details>
+                            <summary>View Query</summary>
+                            <pre class="code">
+<code>SELECT reviewer.rev_id, reviewer.rev_name AS reviewer_name, ROUND(AVG(rating.rev_stars), 2) AS average_rating</code>
+<code>FROM reviewer</code>
+<code>JOIN rating</code> 
+<code>ON reviewer.rev_id = rating.rev_id</code>
+<code>WHERE rating.rev_stars IS NOT NULL AND rev_name IS NOT NULL</code>
+<code>GROUP BY reviewer.rev_id</code>
+<code>ORDER BY average_rating DESC LIMIT 5</code>
+                            </pre>
+                        </details>
+                        <details>
+                            <summary>View Explanation</summary>
+                            <br>
+                            <span class="explanation-title">Data report use case</span>
+                            <p>
+                                As part of a scheme to encourage users of the movie application, we want to reward those that enjoyed our movies the most, and as such we require a well formatted data report that may be queried in order to generate emails to be sent out to these users.
+                            </p>
+                            <span class="explanation-title">Query breakdown</span>
+                            <p>
+                                This data report requires that we generate a list of the users that rate moviews the highest when using the rating system, therefore our report will require information from both the reviewer and ratings table.
+                            </p>
+                            <p>
+                                To generate this intermediate table, we would run the following query to join the reviewers table to the ratings table utilising the rev_id key constraint.
+                            </p>
+                            <pre class="code">
+<code>SELECT * FROM reviewer</code>
+<code>JOIN rating</code>
+<code>ON reviewer.rev_id = rating.rev_id</code>
+                            </pre>
+                            <p>
+                                We utilise an inner join in this instance as we want to ensure that we return a data report where there is available data for both the reviewer and the rating itself, if we were for instance to do a LEFT OUTER JOIN instead, we may have reviewer information returned which do not have associated rating data, due to some reviewers not having reviewed a movie yet.
+                            </p>
+                            <p>
+                                The next step is to ensure that we get only the relevant columns for our query, remembering to ensure that we are not ambigious with our column descriptions in our select statement by specifying which of the initial tables we are referring to when selecting the columns.
+                            </p>
+                            <pre class="code">
+<code>SELECT reviewer.rev_id, reviewer.rev_name, rating.rev_stars FROM reviewer</code>
+<code>JOIN rating</code>
+<code>ON reviewer.rev_id = rating.rev_id</code>
+                            </pre>
+                            <p>
+                                This table now contains more relevant data, however it may return rows with missing data for either the reviewer name, or the reviewer rating as there is no constraint within the schema that dictates that these fields must be populated. In our use case, entries with either of these fields missing will be unusable as meaningful user emails cannot be sent without this information, and as such we should filter them from our report
+                            </p>
+                            <pre class="code">
+<code>SELECT reviewer.rev_id, reviewer.rev_name, rating.rev_stars FROM reviewer</code>
+<code>JOIN rating</code>
+<code>ON reviewer.rev_id = rating.rev_id</code>
+<code>WHERE reviewer.rev_name IS NOT NULL AND rating.rev_stars IS NOT NULL</code>
+                            </pre>
+                            <p>
+                                At this point we have a report containing every review with an associated rating and user listed, in order to handle the case where users have made multiple reviews we shall take an average of their ratings to get a representative number for to be used in their email. We do this using the AVG SQL function, combined with the ROUND function in order to ensure that the report generates user friendly decimals.
+                            </p>
+                            <p>
+                                We use the aggregate average function combined with the GROUP BY syntax in order to convert our report to show the average reviewer rating by reviewer_id, and we ensure to use a column entry that is guaranteed to be unique within our dataset so that we do not combine users' ratings in the instance where they have provided the same name.
+
+                                We provide a secondary argument to the ROUND function to ensure a consistent number of decimal places within our report.
+                            </p>
+                            <pre class="code">
+<code>SELECT reviewer.rev_id, reviewer.rev_name, ROUND(AVG(rating.rev_stars), 2) FROM reviewer</code>
+<code>JOIN rating</code>
+<code>ON reviewer.rev_id = rating.rev_id</code>
+<code>WHERE reviewer.rev_name IS NOT NULL AND rating.rev_stars IS NOT NULL</code>
+<code>GROUP BY reviewer.rev_id</code>
+                            </pre>
+                            <p>
+                                Finally we must name our report columns concisely so they can be more easily referred to when generating the emails. We also order our results and use a LIMIT statement to only retrieve the most highest rating users as required by our use case.
+                            </p>
+                            <pre class="code">
+<code>SELECT reviewer.rev_id, reviewer.rev_name AS reviewer_name, ROUND(AVG(rating.rev_stars), 2) AS average_rating</code>
+<code>FROM reviewer</code>
+<code>JOIN rating</code> 
+<code>ON reviewer.rev_id = rating.rev_id</code>
+<code>WHERE rating.rev_stars IS NOT NULL AND rev_name IS NOT NULL</code>
+<code>GROUP BY reviewer.rev_id</code>
+<code>ORDER BY average_rating DESC LIMIT 5</code>
+                            </pre>
+                        </details>
                     </article>
                 </div>
             </div>

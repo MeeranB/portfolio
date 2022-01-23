@@ -56,6 +56,12 @@
       width: 30%;
     }
   }
+  .demo-schema {
+    width: 100%;
+    @media (min-width: map-get($grid-breakpoints, "sm")) {
+      width: 80%;
+    }
+  }
   details {
     display: none;
     @media (min-width: map-get($grid-breakpoints, "sm")) {

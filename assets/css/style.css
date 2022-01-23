@@ -10576,6 +10576,14 @@ form .error {
     width: 30%;
   }
 }
+.examples-content .demo-schema {
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .examples-content .demo-schema {
+    width: 80%;
+  }
+}
 .examples-content details {
   display: none;
   border: 1px solid #f39c12;
