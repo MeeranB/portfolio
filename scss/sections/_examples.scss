@@ -102,3 +102,12 @@
     color: #f39c12;
   }
 }
+table {
+  display: flex;
+  justify-content: center;
+}
+th, td {
+  color: white;
+  border: 1px solid white;
+  padding: 1em;
+}

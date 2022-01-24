@@ -10628,6 +10628,17 @@ form .error {
   color: #f39c12;
 }
 
+table {
+  display: flex;
+  justify-content: center;
+}
+
+th, td {
+  color: white;
+  border: 1px solid white;
+  padding: 1em;
+}
+
 .about-header {
   padding: 28px 0;
   background-color: #141414;
