@@ -10151,13 +10151,13 @@ main {
 
 .menu-btn {
   display: none;
-  position: fixed;
+  position: absolute;
   z-index: 10;
   display: none;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
-  margin-left: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
   border-radius: 3px;
   min-width: 63px;
   height: 56px;
@@ -10306,6 +10306,7 @@ body {
 
 .hero-image {
   position: relative;
+  padding-top: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10318,6 +10319,7 @@ body {
 }
 .hero-image .overlay {
   position: absolute;
+  top: 0;
   background-color: black;
   opacity: 0.5;
   width: 100%;
@@ -10524,6 +10526,9 @@ form .error {
     padding: 56px 0;
   }
 }
+.examples-header .examples-title {
+  padding: 0px 60px;
+}
 
 .content-container {
   display: flex;
@@ -10654,6 +10659,9 @@ th, td {
     padding: 56px 0;
   }
 }
+.about-header .about-title {
+  padding: 0px 60px;
+}
 
 .about-content {
   display: flex;
@@ -10689,6 +10697,9 @@ th, td {
   .scs-header {
     padding: 56px 0;
   }
+}
+.scs-header .scs-title {
+  padding: 0px 60px;
 }
 
 .scs-content {
