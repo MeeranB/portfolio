@@ -1,37 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Meeran – Portfolio | SCS Scheme">
-    <title>Meeran - Portfolio</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="favicon_io/site.webmanifest">
-</head>
-<body>
-    <div class="page-container">
-        <div class="menu-btn">
-            <div class="menu-btn__burger"></div>
-            <span class="title">Menu</span>
-        </div>
-        <nav class="sidebar">
-            <a class="sidebar__logo text-uppercase text-center" href="/">mb</a>
-            <div class="sidebar__linkcontainer">
-                <a class="sidebar__link" href="/about.html"><span class="sidebar__link__text">About Me</span></a>
-                <a class="sidebar__link" href="/#projects"><span class="sidebar__link__text">My Portfolio</span></a>
-                <a class="sidebar__link" href="/examples.html"><span class="sidebar__link__text">Coding Examples</span></a>
-                <a class="sidebar__link" href="/scs.html"><span class="sidebar__link__text">SCS Scheme</span></a>
-                <a class="sidebar__link" href="/#contact"><span class="sidebar__link__text">Contact Me</span></a>
-            </div>
-            <div class="sidebar__icons">
-                <a href="https://www.linkedin.com/in/meeran-bala-kumaran-3880081b3/"><span class="icon-linkedin"></span></a>
-                <a href="https://github.com/MeeranB"><span class="icon-github"></span></a>
-            </div>
-        </nav>
+<?php
+
+include 'include/sidebar.php';
+
+?>
         <main>
             <div class="container--main">
                 <header class="scs-header">
@@ -70,7 +41,7 @@
                 </section>
             </div>
         </main>
-    </div>
+    </div> <!-- page container -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/3.3.2/jquery.sidebar.min.js"></script>
     <script src="assets/js/main.js"></script>

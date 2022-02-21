@@ -10368,7 +10368,7 @@ main {
 }
 
 .project-card {
-  background-image: url(/assets/images/netmatters-preview.png);
+  background-image: url(../../assets/images/netmatters-preview.png);
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
