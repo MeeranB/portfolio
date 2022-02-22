@@ -7,7 +7,6 @@ ini_set('display_errors', 'on');
 $fname = $lname = $email = $subject = $message = "";
 
 function checkValidEntries($formValidation) {
-    // $isValidEmailInput = array_unique(array_values($formValidation['email'])) === array(true);
     foreach ($formValidation as $formInput => $validity) {
         if (count($validity) > 1 && !(array_unique(array_values($validity)) === array(true))) {
             return false;
