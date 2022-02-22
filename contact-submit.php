@@ -4,7 +4,7 @@ include('include/bootstrap.php');
 
 ini_set('display_errors', 'on');
 
-$fname = $lname = $email = $subject = $message = "";
+$submitted = false;
 
 function checkValidEntries($formValidation) {
     foreach ($formValidation as $formInput => $validityCriteria) {
@@ -54,7 +54,7 @@ try {
     $_POST = json_decode(file_get_contents("php://input"), true);
     $formValidation = array_fill_keys(array_keys($_POST), array());
     if (isValidEmail($_POST['email'])) {
-        $email = test_input($_POST['email']);
+        // $email = test_input($_POST['email']);
         $formValidation['email']['valid'] = true;
     } else {
         $formValidation['email']['valid'] = false;
@@ -68,12 +68,35 @@ try {
         }
     }
     $validForm = checkValidEntries($formValidation);
+
+    if ($validForm) {
+        $trimmedInput = array_map('test_input', $_POST);
+        $stmt = $db->prepare('INSERT INTO messages VALUES (id, :fname, :lname, :email, :subject, :message)');
+        $fname = filter_var($trimmedInput['fname'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $lname = filter_var($trimmedInput['lname'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $subject = filter_var($trimmedInput['subject'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $message = filter_var($trimmedInput['message'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $email = filter_var($trimmedInput['email'], FILTER_SANITIZE_EMAIL);
+
+        $stmt->bindParam(':fname', $fname, PDO::PARAM_STR);
+        $stmt->bindParam(':lname', $lname, PDO::PARAM_STR); 
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR); 
+        $stmt->bindParam(':subject', $subject, PDO::PARAM_STR); 
+        $stmt->bindParam(':message', $message, PDO::PARAM_STR); 
+        $stmt->execute();
+
+        $submitted = true;
+    }
+
+
     echo json_encode(
-        array(
+        array( 
                 'formValidation' => $formValidation,
-                'validForm' => $validForm
+                'validForm' => $validForm,
+                'submitted' => $submitted
             )
         );
+
 } catch(Exception $e) {
     $error_message = $e->getMessage();
     echo $error_message;
