@@ -41,7 +41,7 @@ include 'include/sidebar.php';
             <!-- /projects -->
             <!-- contact -->
             <div class="contact-form-container container pb-5">
-                <form id="contact-form" class="row">
+                <form id="contact-form" class="row" novalidate>
                     <h2 id="contact" class="contact-section-title mb-5">Contact me</h2>
                     <p class="contact-prompt">I am open to career opportunities, and can be contacted at <a class="main-link" href="mailto:meeran.bala-kumaran@netmatters-scs.co.uk"><span>meeran.bala-kumaran@netmatters-scs.co.uk</span></a> or via the contact form.</p>
                     <div class="col-12 col-lg-6 pt-3">
@@ -84,6 +84,7 @@ include 'include/sidebar.php';
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/3.3.2/jquery.sidebar.min.js"></script>
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

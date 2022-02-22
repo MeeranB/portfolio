@@ -6,10 +6,33 @@ const menuBtn = $(".menu-btn");
 const sideBar = $(".sidebar");
 const main = $("main");
 
+function postData() {
+    const formString = $("#contact-form").serialize();
+    const formUrlSearchParams = new URLSearchParams(formString);
+    const submittedData = {};
+    for (const [key, value] of formUrlSearchParams) {
+        submittedData[key] = value;
+    }
+    axios
+        .post("contact-submit.php", submittedData)
+        .then(response => {
+            console.log(response);
+            if (response.data == "success") {
+                console.log("submitted");
+            }
+        })
+        .catch(error => console.log(error));
+}
+
+$("#contact-form").on("submit", e => {
+    e.preventDefault();
+    postData();
+});
+
 //Initialise sidebar animation
 sideBar.sidebar({
     side: "left",
-    close: false
+    close: false,
 });
 
 window.onload = () => {
@@ -85,17 +108,27 @@ const heroSubtitle = $(".hero-text--subtitle");
 
 const typewriter = new Typewriter(heroSubtitle[0], {
     loop: true,
-    delay: 75
+    delay: 75,
 });
 
-typewriter.pauseFor(1000).typeString("I am a web developer").pauseFor(1500).deleteChars(13).typeString("web designer").pauseFor(1500).deleteChars(18).changeDelay(60).typeString(" could be an invaluable asset to <strong> your </strong> business!").pauseFor(2500).start();
+typewriter
+    .pauseFor(1000)
+    .typeString("I am a web developer")
+    .pauseFor(1500)
+    .deleteChars(13)
+    .typeString("web designer")
+    .pauseFor(1500)
+    .deleteChars(18)
+    .changeDelay(60)
+    .typeString(
+        " could be an invaluable asset to <strong> your </strong> business!"
+    )
+    .pauseFor(2500)
+    .start();
 
-$("#contact-form").validate({
-    submitHandler: function (form) {
-        $(".success-prompt").text("Message submitted successfully");
-        $("#contact-form").trigger("reset");
-    },
-    invalidHandler: function (form) {
-        $(".success-prompt").text("");
-    }
-});
+// $("#contact-form").validate({
+//     submitHandler: postData,
+//     invalidHandler: function (form) {
+//         $(".success-prompt").text("");
+//     },
+// });

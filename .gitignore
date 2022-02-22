@@ -10,3 +10,5 @@ node_modules
 *.map
 *.js.map
 .bundle
+.env
+.vendor
