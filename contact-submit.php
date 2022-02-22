@@ -7,10 +7,20 @@ ini_set('display_errors', 'on');
 $fname = $lname = $email = $subject = $message = "";
 
 function checkValidEntries($formValidation) {
-    foreach ($formValidation as $formInput => $validity) {
-        if (count($validity) > 1 && !(array_unique(array_values($validity)) === array(true))) {
+    foreach ($formValidation as $formInput => $validityCriteria) {
+
+        //Retrieve validity test results from each input's validity criteria as unassociated array
+        $validityResults = array_values($validityCriteria);
+
+        //Computes if all validation passes
+        $allTestsPass = array_unique($validityResults) === array(true);
+
+        //Alternate computation for single validation tests
+        $singleTestPass = $validityResults === [true];
+
+        if (count($validityCriteria) > 1 && !($allTestsPass)) {
             return false;
-        } else if (count($validity) == 1 && array_values($validity) !== [true]) {
+        } else if (count($validityCriteria) == 1 && !($singleTestPass)) {
             return false;
         }
     }
