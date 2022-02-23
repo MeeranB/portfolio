@@ -10507,9 +10507,14 @@ form .error {
 }
 
 .success-prompt {
-  display: block;
+  display: flex;
   font-weight: bold;
   color: #05e105;
+  margin-bottom: 0;
+}
+.success-prompt span {
+  align-self: center;
+  margin-bottom: 3px;
 }
 
 .examples-header {

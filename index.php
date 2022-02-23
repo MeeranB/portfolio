@@ -41,7 +41,7 @@ include 'include/sidebar.php';
             <!-- /projects -->
             <!-- contact -->
             <div class="contact-form-container container pb-5">
-                <form id="contact-form" class="row" novalidate>
+                <form id="contact-form" class="row">
                     <h2 id="contact" class="contact-section-title mb-5">Contact me</h2>
                     <p class="contact-prompt">I am open to career opportunities, and can be contacted at <a class="main-link" href="mailto:meeran.bala-kumaran@netmatters-scs.co.uk"><span>meeran.bala-kumaran@netmatters-scs.co.uk</span></a> or via the contact form.</p>
                     <div class="col-12 col-lg-6 pt-3">
@@ -69,8 +69,10 @@ include 'include/sidebar.php';
                         <label id="message-error" class="error" for="message"></label>
                         <textarea id="message" name="message" minlength="2" class="form-control message-input" placeholder="Message" aria-label="Message" required></textarea>
                     </div>
-                    <input id="contact-submit" type="submit" value="Submit" class="btn btn-success col-4">
-                    <p class="success-prompt"></p>
+                    <div class="col-12 row">
+                        <input id="contact-submit" type="submit" value="Submit" class="btn btn-success col-4">
+                        <div class="success-prompt col-12 col-sm-7"><span>Your message has been submitted successfully.</span></div>
+                    </div>
                 </form>
             </div>
             <!-- /contact -->

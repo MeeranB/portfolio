@@ -16,9 +16,11 @@ function postData() {
     axios
         .post("contact-submit.php", submittedData)
         .then(response => {
-            console.log(response);
-            if (response.data == "success") {
-                console.log("submitted");
+            if (!response.data.validForm) {
+                throw new Error("form was not valid");
+            }
+            if (response.data.submitted) {
+                $(".success-prompt").show().delay(2000).fadeOut("fast");
             }
         })
         .catch(error => console.log(error));
@@ -49,6 +51,10 @@ window.onload = () => {
         }
     }
 };
+
+$(() => {
+    $(".success-prompt").hide();
+});
 
 let windowSize = $(window).width();
 
@@ -126,9 +132,44 @@ typewriter
     .pauseFor(2500)
     .start();
 
-// $("#contact-form").validate({
-//     submitHandler: postData,
-//     invalidHandler: function (form) {
-//         $(".success-prompt").text("");
-//     },
-// });
+$("#contact-form").validate({
+    rules: {
+        name: "required",
+        email: {
+            required: true,
+            validEmail: true,
+        },
+        telNumber: {
+            required: true,
+            validPhone: true,
+        },
+        subject: "required",
+        message: "required",
+    },
+    submitHandler: postData,
+});
+
+jQuery.extend(jQuery.validator.messages, {
+    required: "",
+    email: "Email must be valid",
+});
+
+jQuery.validator.addMethod(
+    "validPhone",
+    function (value, element) {
+        // prettier-ignore
+        const phoneRegex = /^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i;
+        return this.optional(element) || phoneRegex.test(value);
+    },
+    ""
+);
+
+jQuery.validator.addMethod(
+    "validEmail",
+    function (value, element) {
+        // prettier-ignore
+        const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        return this.optional(element) || emailRegex.test(value);
+    },
+    ""
+);
