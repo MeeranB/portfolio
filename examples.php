@@ -15,99 +15,102 @@ include 'include/sidebar.php';
                             <span class="note-container">(trivial style declarations have been excluded for brevity)</span>
                         </div>
                         <div class="demo-gif-container">
-                            <img src="/assets/images/info-card-demo.gif" alt="GIF demonstrating hover effect on a card" class="demo-gif">
+                            <img src="assets/images/info-card-demo.gif" alt="GIF demonstrating hover effect on a card" class="demo-gif">
                         </div>
                         <a href="https://gist.github.com/MeeranB/440d8bf3433b5188bbef7a0965a4d940" class="gist-button button" target="_blank">View code</a>
                         <details>
                             <summary>View HTML</summary>
-                            <pre class="code">
-<code>&lt;div class=&quot;info-card info-card--apps&quot;&gt;</code>
-<code>    &lt;div class=&quot;info-link&quot;&gt;</code>
-<code>        &lt;div class=&quot;icon-container icon-container--apps&quot;&gt;</code>
-<code>            &lt;span class=&quot;card-icon icon-apps&quot;&gt;&lt;/span&gt;</code>
-<code>        &lt;/div&gt;</code>
-<code>        &lt;div class=&quot;info-title-container&quot;&gt;</code>
-<code>            &lt;span class=&quot;h2&quot;&gt;Bespoke Software&lt;/span&gt;</code>
-<code>        &lt;/div&gt;</code>
-<code>        &lt;div class=&quot;info-subtitle-container&quot;&gt;</code>
-<code>            &lt;span class=&quot;p&quot;&gt;</code>
-<code>                &lt;!-- Card content goes here --&gt;</code>
-<code>            &lt;/span&gt;</code>
-<code>        &lt;/div&gt;</code>
-<code>        &lt;div class=&quot;btn-container&quot;&gt;</code>
-<code>            &lt;span class=&quot;btn btn-software&quot;&gt;&lt;span&gt;Read More&lt;/span&gt;&lt;/span&gt;</code>
-<code>        &lt;/div&gt;</code>
-<code>    &lt;/div&gt;</code>
-<code>&lt;/div&gt;</code>
+                            <pre>
+                                <code class="language-html line-numbers">
+                                    &lt;div class=&quot;info-card info-card--apps&quot;&gt;
+                                    &lt;div class=&quot;info-link&quot;&gt;
+                                        &lt;div class=&quot;icon-container icon-container--apps&quot;&gt;
+                                            &lt;span class=&quot;card-icon icon-apps&quot;&gt;&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;info-title-container&quot;&gt;
+                                            &lt;span class=&quot;h2&quot;&gt;Bespoke Software&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;info-subtitle-container&quot;&gt;
+                                            &lt;span class=&quot;p&quot;&gt;
+                                                &lt;!-- Card content goes here --&gt;
+                                            &lt;/span&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class=&quot;btn-container&quot;&gt;
+                                            &lt;span class=&quot;btn btn-software&quot;&gt;&lt;span&gt;Read More&lt;/span&gt;&lt;/span&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                </code>
                             </pre>
                         </details>
                         <details>
                             <summary>View SCSS</summary>
-                            <pre class="code">
-<code>.info-card {</code>
-<code>    box-shadow: 0 3px 35px rgb(0 0 0 / 10%);</code>
-<code>    height: 100%;</code>
-<code>    .btn-container {</code>
-<code>        margin-top: auto;</code>
-<code>    }</code>
-<code>    .info-link {</code>
-<code>        display: flex;</code>
-<code>        flex-direction: column;</code>
-<code>        height: 100%;</code>
-<code>    }</code>
-<code>    .icon-container {</code>
-<code>        text-align: center;</code>
-<code>        position: relative;</code>
-<code>        .card-icon {</code>
-<code>            color: white;</code>
-<code>        }</code>
-<code>        .card-icon::after {</code>
-<code>            content: '';</code>
-<code>            position: absolute;</code>
-<code>            top: 0;</code>
-<code>            left: calc(50% - 30px);</code>
-<code>            width: 60px;</code>
-<code>            height: 60px;</code>
-<code>            border-radius: 50%;</code>
-<code>        }</code>
-<code>        .card-icon::before {</code>
-<code class="optional">            //Places the icon over it's container</code>
-<code>            position: relative;</code>
-<code>            z-index: 1;</code>
-<code>        }</code>
-<code>    }</code>
-<code>    &amp;:hover {</code>
-<code>        //Remove color from elements</code>
-<code>        .h2,</code>
-<code>        .p {</code>
-<code>            color: white;</code>
-<code>        }</code>
-<code>        .h2::after,</code>
-<code>        .btn,</code>
-<code>        .card-icon::after {</code>
-<code>            background-color: white;</code>
-<code>        }</code>
-<code>        .btn {</code>
-<code>            border-color: white;</code>
-<code>        }</code>
-<code>    }</code>
-<code>    @each $card-type, $color in $icon-colorscheme {</code>
-<code class="optional">        //Invert color scheme for each info-card</code>
-<code>        &amp;--#{$card-type}:hover {</code>
-<code class="optional">            //Sets info-card background color</code>
-<code>            background-color: $color;</code>
-<code>            .btn,</code>
-<code>            .icon-#{$card-type}::before {</code>
-<code class="optional">                //Sets icon and buttons hover font</code>
-<code>                color: $color;</code>
-<code>            }</code>
-<code>        }</code>
-<code>        .icon-#{$card-type}::after {</code>
-<code>            //Sets icon circle correctly</code>
-<code>            background-color: $color;</code>
-<code>        }</code>
-<code>    }</code>
-<code>}</code>
+                            <pre>
+                                <code class="language-scss line-numbers">
+                                    .info-card {
+                                    box-shadow: 0 3px 35px rgb(0 0 0 / 10%);
+                                    height: 100%;
+                                    .btn-container {
+                                        margin-top: auto;
+                                    }
+                                    .info-link {
+                                        display: flex;
+                                        flex-direction: column;
+                                        height: 100%;
+                                    }
+                                    .icon-container {
+                                        text-align: center;
+                                        position: relative;
+                                        .card-icon {
+                                            color: white;
+                                        }
+                                        .card-icon::after {
+                                            content: '';
+                                            position: absolute;
+                                            top: 0;
+                                            left: calc(50% - 30px);
+                                            width: 60px;
+                                            height: 60px;
+                                            border-radius: 50%;
+                                        }
+                                        .card-icon::before {
+                                            //Places the icon over it's container
+                                            position: relative;
+                                            z-index: 1;
+                                        }
+                                    }
+                                    &amp;:hover {
+                                        //Remove color from elements
+                                        .h2,
+                                        .p {
+                                            color: white;
+                                        }
+                                        .h2::after,
+                                        .btn,
+                                        .card-icon::after {
+                                            background-color: white;
+                                        }</code>
+                                        .btn {
+                                            border-color: white;
+                                        }
+                                    }
+                                    @each $card-type, $color in $icon-colorscheme {
+                                        //Invert color scheme for each info-card
+                                        &amp;--#{$card-type}:hover {
+                                            //Sets info-card background color
+                                            background-color: $color;
+                                            .btn,
+                                            .icon-#{$card-type}::before {
+                                                //Sets icon and buttons hover font
+                                                color: $color;
+                                            }
+                                        }
+                                        .icon-#{$card-type}::after {
+                                            //Sets icon circle correctly
+                                            background-color: $color;
+                                        }
+                                    }
+                                }
                             </pre>
                         </details>
                         <details>
@@ -146,18 +149,20 @@ include 'include/sidebar.php';
                             <span class="note-container">A demonstration of SQL understanding using the below schema</span>
                         </div>
                         <div class="demo-gif-container">
-                            <img src="/assets/images/movie-database.png" alt="Movie database schema" class="demo-schema">
+                            <img src="assets/images/movie-database.png" alt="Movie database schema" class="demo-schema">
                         </div>
                         <details>
                             <summary>View Query</summary>
-                            <pre class="code">
-<code>SELECT reviewer.rev_id, reviewer.rev_name AS reviewer_name, ROUND(AVG(rating.rev_stars), 2) AS average_rating</code>
-<code>FROM reviewer</code>
-<code>JOIN rating</code> 
-<code>ON reviewer.rev_id = rating.rev_id</code>
-<code>WHERE rating.rev_stars IS NOT NULL AND rev_name IS NOT NULL</code>
-<code>GROUP BY reviewer.rev_id</code>
-<code>ORDER BY average_rating DESC LIMIT 5</code>
+                            <pre>
+                                <code class="language-sql line-numbers">
+                                    SELECT reviewer.rev_id, reviewer.rev_name AS reviewer_name, ROUND(AVG(rating.rev_stars), 2) AS average_rating
+                                    FROM reviewer
+                                    JOIN rating 
+                                    ON reviewer.rev_id = rating.rev_id
+                                    WHERE rating.rev_stars IS NOT NULL AND rev_name IS NOT NULL
+                                    GROUP BY reviewer.rev_id
+                                    ORDER BY average_rating DESC LIMIT 5
+                                </code>
                             </pre>
                         </details>
                         <details>
@@ -174,10 +179,12 @@ include 'include/sidebar.php';
                             <p>
                                 To generate this intermediate table, we would run the following query to join the reviewers table to the ratings table utilising the rev_id key constraint.
                             </p>
-                            <pre class="code">
-<code>SELECT * FROM reviewer</code>
-<code>JOIN rating</code>
-<code>ON reviewer.rev_id = rating.rev_id</code>
+                            <pre>
+                                <code class="language-sql line-numbers">
+                                    SELECT * FROM reviewer
+                                    JOIN rating
+                                    ON reviewer.rev_id = rating.rev_id
+                                </code>
                             </pre>
                             <p>
                                 We utilise an inner join in this instance as we want to ensure that we return a data report where there is available data for both the reviewer and the rating itself, if we were for instance to do a LEFT OUTER JOIN instead, we may have reviewer information returned which do not have associated rating data, due to some reviewers not having reviewed a movie yet.
@@ -185,19 +192,23 @@ include 'include/sidebar.php';
                             <p>
                                 The next step is to ensure that we get only the relevant columns for our query, remembering to ensure that we are not ambigious with our column descriptions in our select statement by specifying which of the initial tables we are referring to when selecting the columns.
                             </p>
-                            <pre class="code">
-<code>SELECT reviewer.rev_id, reviewer.rev_name, rating.rev_stars FROM reviewer</code>
-<code>JOIN rating</code>
-<code>ON reviewer.rev_id = rating.rev_id</code>
+                            <pre>
+                                <code class="language-sql line-numbers">
+                                    SELECT reviewer.rev_id, reviewer.rev_name, rating.rev_stars FROM reviewer
+                                    JOIN rating
+                                    ON reviewer.rev_id = rating.rev_id
+                                </code>
                             </pre>
                             <p>
                                 This table now contains more relevant data, however it may return rows with missing data for either the reviewer name, or the reviewer rating as there is no constraint within the schema that dictates that these fields must be populated. In our use case, entries with either of these fields missing will be unusable as meaningful user emails cannot be sent without this information, and as such we should filter them from our report
                             </p>
-                            <pre class="code">
-<code>SELECT reviewer.rev_id, reviewer.rev_name, rating.rev_stars FROM reviewer</code>
-<code>JOIN rating</code>
-<code>ON reviewer.rev_id = rating.rev_id</code>
-<code>WHERE reviewer.rev_name IS NOT NULL AND rating.rev_stars IS NOT NULL</code>
+                            <pre>
+                                <code class="language-sql line-numbers">
+                                    SELECT reviewer.rev_id, reviewer.rev_name, rating.rev_stars FROM reviewer
+                                    JOIN rating
+                                    ON reviewer.rev_id = rating.rev_id
+                                    WHERE reviewer.rev_name IS NOT NULL AND rating.rev_stars IS NOT NULL
+                                </code>
                             </pre>
                             <p>
                                 At this point we have a report containing every review with an associated rating and user listed, in order to handle the case where users have made multiple reviews we shall take an average of their ratings to get a representative number for to be used in their email. We do this using the AVG SQL function, combined with the ROUND function in order to ensure that the report generates user friendly decimals.
@@ -207,24 +218,28 @@ include 'include/sidebar.php';
 
                                 We provide a secondary argument to the ROUND function to ensure a consistent number of decimal places within our report.
                             </p>
-                            <pre class="code">
-<code>SELECT reviewer.rev_id, reviewer.rev_name, ROUND(AVG(rating.rev_stars), 2) FROM reviewer</code>
-<code>JOIN rating</code>
-<code>ON reviewer.rev_id = rating.rev_id</code>
-<code>WHERE reviewer.rev_name IS NOT NULL AND rating.rev_stars IS NOT NULL</code>
-<code>GROUP BY reviewer.rev_id</code>
+                            <pre>
+                                <code class="language-sql line-numbers">
+                                    SELECT reviewer.rev_id, reviewer.rev_name, ROUND(AVG(rating.rev_stars), 2) FROM reviewer
+                                    JOIN rating
+                                    ON reviewer.rev_id = rating.rev_id
+                                    WHERE reviewer.rev_name IS NOT NULL AND rating.rev_stars IS NOT NULL
+                                    GROUP BY reviewer.rev_id
+                                </code>
                             </pre>
                             <p>
                                 Finally we must name our report columns concisely so they can be more easily referred to when generating the emails. We also order our results and use a LIMIT statement to only retrieve the most highest rating users as required by our use case.
                             </p>
-                            <pre class="code">
-<code>SELECT reviewer.rev_id, reviewer.rev_name AS reviewer_name, ROUND(AVG(rating.rev_stars), 2) AS average_rating</code>
-<code>FROM reviewer</code>
-<code>JOIN rating</code> 
-<code>ON reviewer.rev_id = rating.rev_id</code>
-<code>WHERE rating.rev_stars IS NOT NULL AND rev_name IS NOT NULL</code>
-<code>GROUP BY reviewer.rev_id</code>
-<code>ORDER BY average_rating DESC LIMIT 5</code>
+                            <pre>
+                                <code class="language-sql line-numbers">
+                                    SELECT reviewer.rev_id, reviewer.rev_name AS reviewer_name, ROUND(AVG(rating.rev_stars), 2) AS average_rating
+                                    FROM reviewer
+                                    JOIN rating
+                                    ON reviewer.rev_id = rating.rev_id
+                                    WHERE rating.rev_stars IS NOT NULL AND rev_name IS NOT NULL
+                                    GROUP BY reviewer.rev_id
+                                    ORDER BY average_rating DESC LIMIT 5
+                                </code>
                             </pre>
                         </details>
                         <details>
@@ -269,6 +284,7 @@ include 'include/sidebar.php';
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/3.3.2/jquery.sidebar.min.js"></script>
+    <script src="assets/js/prism.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

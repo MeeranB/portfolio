@@ -70,35 +70,12 @@
     @media (min-width: map-get($grid-breakpoints, "sm")) {
       display: inline-block;
     }
-    border: 1px solid #f39c12;
-    border-radius: 4px;
+    // border: 1px solid #f39c12;
+    // border-radius: 4px;
     padding: .5em .5em;
   }
   summary {
     color: #f39c12;
-  }
-  .optional {
-    display: none;
-    @media (min-width: map-get($grid-breakpoints, "lg")) {
-      display: inline;
-    }
-  }
-  pre.code {
-    white-space: pre-wrap;
-  }
-  pre.code:before {
-      counter-reset: listing;
-  }
-  pre.code code {
-      counter-increment: listing;
-  }
-  pre.code code:before {
-    content: counter(listing) ".   ";
-    display: inline-block;
-    width: 8em;
-    padding-left: auto;
-    margin-left: auto;
-    text-align: right;
   }
   .explanation-title {
     font-size: 30;

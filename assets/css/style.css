@@ -10597,8 +10597,6 @@ form .error {
 }
 .examples-content details {
   display: none;
-  border: 1px solid #f39c12;
-  border-radius: 4px;
   padding: 0.5em 0.5em;
 }
 @media (min-width: 576px) {
@@ -10608,31 +10606,6 @@ form .error {
 }
 .examples-content summary {
   color: #f39c12;
-}
-.examples-content .optional {
-  display: none;
-}
-@media (min-width: 992px) {
-  .examples-content .optional {
-    display: inline;
-  }
-}
-.examples-content pre.code {
-  white-space: pre-wrap;
-}
-.examples-content pre.code:before {
-  counter-reset: listing;
-}
-.examples-content pre.code code {
-  counter-increment: listing;
-}
-.examples-content pre.code code:before {
-  content: counter(listing) ".   ";
-  display: inline-block;
-  width: 8em;
-  padding-left: auto;
-  margin-left: auto;
-  text-align: right;
 }
 .examples-content .explanation-title {
   font-size: 30;

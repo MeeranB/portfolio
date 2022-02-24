@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Meeran – Portfolio | Home">
     <title>Meeran - Portfolio</title>
+    <link rel="stylesheet" href="assets/css/prism.css"></link>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
