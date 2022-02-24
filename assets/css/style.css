@@ -10556,14 +10556,9 @@ form .error {
   display: inline-block;
 }
 .examples-content .note-container {
-  display: none;
+  display: block;
   padding: 20px 20px 20px 0;
-  color: #f39c12;
-}
-@media (min-width: 576px) {
-  .examples-content .note-container {
-    display: block;
-  }
+  color: white;
 }
 .examples-content .demo-gif-container {
   display: flex;
@@ -10596,13 +10591,8 @@ form .error {
   }
 }
 .examples-content details {
-  display: none;
+  display: inline-block;
   padding: 0.5em 0.5em;
-}
-@media (min-width: 576px) {
-  .examples-content details {
-    display: inline-block;
-  }
 }
 .examples-content summary {
   color: #f39c12;
@@ -10615,6 +10605,7 @@ form .error {
 table {
   display: flex;
   justify-content: center;
+  overflow-x: auto;
 }
 
 th, td {

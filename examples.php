@@ -277,6 +277,78 @@ include 'include/sidebar.php';
                                   </tr>
                               </table>                              
                         </details>
+                        <div class="article-head">
+                            <h2><span>PHP Form Response</span></h2>
+                            <span class="note-container">
+                                On submission of this sites' contact form, it is necessary to additionally validate form inputs within a server-side script despite any client-side validation present, as a malicious user can easily bypass client-side validation. When the form is submitted, Axios is used to send a POST request to a PHP script that posts sanitised and escaped form data to a database. This script also generates a JSON object response containing information on the the pass state of each form inputs validity criteria, and booleans confirming that the form's validity state as a whole and whether the form data was successfully submitted to the database. This is an excerpt of that script:
+                            </span>
+                        </div>
+                            <details>
+                                <summary>View script</summary>
+                                <pre>
+                                    <code class="language-php line-numbers">
+                                    function checkValidEntries($formValidation) {
+                                        foreach ($formValidation as $formInput => $validityCriteria) {
+
+                                            //Retrieve validity test results from each input's validity criteria as unassociated array
+                                            $validityResults = array_values($validityCriteria);
+
+                                            //Computes if all validation passes
+                                            $allTestsPass = array_unique($validityResults) === array(true);
+
+                                            //Alternate computation for single validation tests
+                                            $singleTestPass = $validityResults === [true];
+
+                                            if (count($validityCriteria) > 1 && !($allTestsPass)) {
+                                                return false;
+                                            } else if (count($validityCriteria) == 1 && !($singleTestPass)) {
+                                                return false;
+                                            }
+                                        }
+                                        return true;
+                                    }
+
+
+                                    try {
+                                        $_POST = json_decode(file_get_contents("php://input"), true);
+                                        $formValidation = array_fill_keys(array_keys($_POST), array());
+                                        if (isValidEmail($_POST['email'])) {
+                                            $formValidation['email']['valid'] = true;
+                                        } else {
+                                            $formValidation['email']['valid'] = false;
+                                        }
+                                        foreach ($_POST as $entry => $input) {
+                                            if(empty($input)) {
+                                                $formValidation[$entry]['filled'] = false;
+                                            }
+                                            else if (!empty($input)) {
+                                                $formValidation[$entry]['filled'] = true;
+                                            }
+                                        }
+                                        $validForm = checkValidEntries($formValidation);
+
+                                        if ($validForm) {
+                                            /*
+                                            Escape and sanitize input, 
+                                            bind parameters using a prepared statement, 
+                                            then execute prepared statement
+                                            */
+
+                                            $submitted = true;
+                                        }
+
+
+                                        echo json_encode(
+                                            array( 
+                                                    'formValidation' => $formValidation,
+                                                    'validForm' => $validForm,
+                                                    'submitted' => $submitted
+                                                )
+                                        );
+                                    }
+                                    </code>
+                                </pre>
+                            </details>
                     </article>
                 </div>
             </div>
