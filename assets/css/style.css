@@ -10498,6 +10498,9 @@ form .error {
   border-color: red;
   border-width: 4px;
 }
+form input:focus.error {
+  border-color: red;
+}
 
 .main-link {
   color: #f39c12;
@@ -10548,6 +10551,10 @@ form .error {
   flex-direction: column;
   row-gap: 2rem;
 }
+.examples-content .example-entry {
+  border: 1px solid #f39c12;
+  border-radius: 1rem;
+}
 .examples-content .article-head, .examples-content pre, .examples-content .note-container {
   border-radius: 25px;
   padding: 20px;
@@ -10591,7 +10598,7 @@ form .error {
   }
 }
 .examples-content details {
-  display: inline-block;
+  display: block;
   padding: 0.5em 0.5em;
 }
 .examples-content summary {

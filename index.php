@@ -47,12 +47,12 @@ include 'include/sidebar.php';
                     <div class="col-12 col-lg-6 pt-3">
                         <label for="fname">First name*&nbsp;&nbsp;</label>
                         <label id="fname-error" class="error" for="fname"></label>
-                        <input id="fname" name="fname" minlength="2" type="text" class="form-control" placeholder="First name" aria-label="First name" required>
+                        <input id="fname" name="fname" type="text" class="form-control" placeholder="First name" aria-label="First name" required>
                     </div>
                     <div class="col-12 col-lg-6 pt-3">
                         <label for="lname">Last name*&nbsp;&nbsp;</label>
                         <label id="lname-error" class="error" for="lname"></label>
-                        <input id="lname" name="lname" minlength="2" type="text" class="form-control" placeholder="Last name" aria-label="Last name" required>
+                        <input id="lname" name="lname" type="text" class="form-control" placeholder="Last name" aria-label="Last name" required>
                     </div>                    
                     <div class="col-12 col-lg-6 pt-3">
                         <label for="email">Email*&nbsp;&nbsp;</label>
@@ -62,12 +62,12 @@ include 'include/sidebar.php';
                     <div class="col-12 col-lg-6 pt-3">
                         <label for="subject">Subject*&nbsp;&nbsp;</label>
                         <label id="subject-error" class="error" for="subject"></label>
-                        <input id="subject" name="subject" minlength="2" type="text" class="form-control" placeholder="Subject" aria-label="Subject" required>
+                        <input id="subject" name="subject" type="text" class="form-control" placeholder="Subject" aria-label="Subject" required>
                     </div>
                     <div class="col-12 mb-4 message pt-3">
                         <label for="message">Message*&nbsp;&nbsp;</label>
                         <label id="message-error" class="error" for="message"></label>
-                        <textarea id="message" name="message" minlength="2" class="form-control message-input" placeholder="Message" aria-label="Message" required></textarea>
+                        <textarea id="message" name="message" class="form-control message-input" placeholder="Message" aria-label="Message" required></textarea>
                     </div>
                     <div class="col-12 row">
                         <input id="contact-submit" type="submit" value="Submit" class="btn btn-success col-4">

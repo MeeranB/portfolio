@@ -52,6 +52,9 @@ form {
         border-color: red;
         border-width: 4px;
     }
+    input:focus.error{
+        border-color: red;
+    }
 }
 
 .main-link {

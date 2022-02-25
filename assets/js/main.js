@@ -28,11 +28,6 @@ function postData() {
         });
 }
 
-$("#contact-form").on("submit", e => {
-    e.preventDefault();
-    postData();
-});
-
 //Initialise sidebar animation
 sideBar.sidebar({
     side: "left",
@@ -148,11 +143,14 @@ $("#contact-form").validate({
         subject: "required",
         message: "required",
     },
-    submitHandler: postData,
+    submitHandler: () => {
+        postData();
+        $("#contact-form").trigger("reset");
+    },
 });
 
 jQuery.extend(jQuery.validator.messages, {
-    required: "",
+    required: "This field is required",
     email: "Email must be valid",
 });
 
@@ -173,5 +171,5 @@ jQuery.validator.addMethod(
         const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
         return this.optional(element) || emailRegex.test(value);
     },
-    ""
+    "Email must be valid"
 );
