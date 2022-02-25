@@ -32,7 +32,7 @@ include 'include/sidebar.php';
                                     A cross browser compatible replica of the Netmatters site, built using HTML, CSS with SASS and Javascript.
                                 </p>
                                 <a href="https://github.com/MeeranB/HTML-CSS-Reflection" class="button" target="_blank">View code</a>
-                                <a href="https://meeran-bala-kumaran.netmatters-scs.co.uk/netmatters/" class="button" target="_blank">View demo</a>
+                                <a href="https://netmatters.meeran-bala-kumaran.netmatters-scs.co.uk/" class="button" target="_blank">View demo</a>
                             </div>
                         </article>
                     </div>

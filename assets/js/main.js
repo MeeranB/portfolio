@@ -23,7 +23,9 @@ function postData() {
                 $(".success-prompt").show().delay(2000).fadeOut("fast");
             }
         })
-        .catch(error => console.log(error));
+        .catch(error => {
+            console.log(error);
+        });
 }
 
 $("#contact-form").on("submit", e => {

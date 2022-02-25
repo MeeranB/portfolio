@@ -280,75 +280,194 @@ include 'include/sidebar.php';
                         <div class="article-head">
                             <h2><span>PHP Form Response</span></h2>
                             <span class="note-container">
-                                On submission of this sites' contact form, it is necessary to additionally validate form inputs within a server-side script despite any client-side validation present, as a malicious user can easily bypass client-side validation. When the form is submitted, Axios is used to send a POST request to a PHP script that posts sanitised and escaped form data to a database. This script also generates a JSON object response containing information on the the pass state of each form inputs validity criteria, and booleans confirming that the form's validity state as a whole and whether the form data was successfully submitted to the database. This is an excerpt of that script:
+                                On submission of this sites' contact form, it is necessary to additionally validate form inputs within a server-side script despite any client-side validation present, as a malicious user can easily bypass client-side validation. When the form is submitted, Axios is used to send a POST request to a PHP script that posts sanitised and escaped form data to a database. <br><br>This script also generates a JSON object response containing information on the the pass state of each form inputs validity criteria, and booleans confirming that the form's validity state as a whole and whether the form data was successfully submitted to the database. This is an excerpt of that script:
                             </span>
                         </div>
-                            <details>
-                                <summary>View script</summary>
-                                <pre>
-                                    <code class="language-php line-numbers">
-                                    function checkValidEntries($formValidation) {
-                                        foreach ($formValidation as $formInput => $validityCriteria) {
+                        <details>
+                            <summary>View Script</summary>
+                            <pre>
+                                <code class="language-php line-numbers">
+                                function checkValidEntries($formValidation) {
+                                    foreach ($formValidation as $formInput => $validityCriteria) {
 
-                                            //Retrieve validity test results from each input's validity criteria as unassociated array
-                                            $validityResults = array_values($validityCriteria);
+                                        //Retrieve validity test results from each input's validity criteria as unassociated array
+                                        $validityResults = array_values($validityCriteria);
 
-                                            //Computes if all validation passes
-                                            $allTestsPass = array_unique($validityResults) === array(true);
+                                        //Computes if all validation passes
+                                        $allTestsPass = array_unique($validityResults) === array(true);
 
-                                            //Alternate computation for single validation tests
-                                            $singleTestPass = $validityResults === [true];
+                                        //Alternate computation for single validation tests
+                                        $singleTestPass = $validityResults === [true];
 
-                                            if (count($validityCriteria) > 1 && !($allTestsPass)) {
-                                                return false;
-                                            } else if (count($validityCriteria) == 1 && !($singleTestPass)) {
-                                                return false;
-                                            }
+                                        if (count($validityCriteria) > 1 && !($allTestsPass)) {
+                                            return false;
+                                        } else if (count($validityCriteria) == 1 && !($singleTestPass)) {
+                                            return false;
                                         }
-                                        return true;
+                                    }
+                                    return true;
+                                }
+
+
+                                try {
+                                    $_POST = json_decode(file_get_contents("php://input"), true);
+                                    $formValidation = array_fill_keys(array_keys($_POST), array());
+                                    if (isValidEmail($_POST['email'])) {
+                                        $formValidation['email']['valid'] = true;
+                                    } else {
+                                        $formValidation['email']['valid'] = false;
+                                    }
+                                    foreach ($_POST as $entry => $input) {
+                                        if(empty($input)) {
+                                            $formValidation[$entry]['filled'] = false;
+                                        }
+                                        else if (!empty($input)) {
+                                            $formValidation[$entry]['filled'] = true;
+                                        }
+                                    }
+                                    $validForm = checkValidEntries($formValidation);
+
+                                    if ($validForm) {
+                                        /*
+                                        Escape and sanitize input, 
+                                        bind parameters using a prepared statement, 
+                                        then execute prepared statement
+                                        */
+
+                                        $submitted = true;
                                     }
 
 
-                                    try {
-                                        $_POST = json_decode(file_get_contents("php://input"), true);
-                                        $formValidation = array_fill_keys(array_keys($_POST), array());
-                                        if (isValidEmail($_POST['email'])) {
-                                            $formValidation['email']['valid'] = true;
-                                        } else {
-                                            $formValidation['email']['valid'] = false;
-                                        }
-                                        foreach ($_POST as $entry => $input) {
-                                            if(empty($input)) {
-                                                $formValidation[$entry]['filled'] = false;
-                                            }
-                                            else if (!empty($input)) {
-                                                $formValidation[$entry]['filled'] = true;
-                                            }
-                                        }
-                                        $validForm = checkValidEntries($formValidation);
-
-                                        if ($validForm) {
-                                            /*
-                                            Escape and sanitize input, 
-                                            bind parameters using a prepared statement, 
-                                            then execute prepared statement
-                                            */
-
-                                            $submitted = true;
-                                        }
-
-
-                                        echo json_encode(
-                                            array( 
-                                                    'formValidation' => $formValidation,
-                                                    'validForm' => $validForm,
-                                                    'submitted' => $submitted
-                                                )
-                                        );
+                                    echo json_encode(
+                                        array( 
+                                                'formValidation' => $formValidation,
+                                                'validForm' => $validForm,
+                                                'submitted' => $submitted
+                                            )
+                                    );
+                                }
+                                </code>
+                            </pre>
+                        </details>
+                        <details>
+                            <summary>View Explanation</summary>
+                            <br>
+                            <span class="explanation-title">Validating the form inputs</span>
+                            <p>
+                                Execution begins on line 24 where we populate the predefined $_POST variable by retrieving the data from the php input stream, which is accessed when the POST axios request is made, JSON decoding is necessary here to create an associative array that can be assigned to our $_POST variable.
+                            </p>
+                            <p>
+                                We then initialise a $formValidation associative array which will be used as part of our PHP response, it is initialised with the same keys as our $_POST variable and with empty arrays as the values as seen below.
+                            </p>
+                            <pre>
+                                <code class="language-php">
+                                    $formValidation = {
+                                        'fname'=>array(),
+                                        'lname'=>array(),
+                                        'subject'=>array(),
+                                        'email'=>array(),
+                                        'message'=>array()
                                     }
-                                    </code>
-                                </pre>
-                            </details>
+                                </code>
+                            </pre>
+                            <p>
+                                On lines 26-30 we validate the data within $_POST['email'] by calling our validation function, this function checks whether it matches a given regular expression, depending on whether this passes or fails we assign to the $formValidation array like so:
+                            </p>
+                            <pre>
+                                <code class="language-php">
+                                    $formValidation = {
+                                        ...
+                                        'email' => {
+                                            'valid' => //true or false
+                                        }
+                                        ...
+                                    }
+                                </code>
+                            </pre>
+                            <p>
+                                Between lines 31 to 38 we continue the validation process by looping through the $_POST array to confirm that the fields are not empty and updating the $formValidation array appropriately.
+                            </p>
+                            <pre>
+                                <code class="language-php">
+                                    $formValidation = {
+                                        'fname' => {
+                                            'filled' => //true or false
+                                        }
+                                        'lname' => {
+                                            'filled' => //true or false
+                                        }
+                                        'email' => {
+                                            'valid' => //true or false
+                                            'filled' => //true or false
+                                        }
+                                        'subject' => {
+                                            'filled' => //true or false
+                                        }
+                                        'message' => {
+                                            'filled' => //true or false
+                                        }
+                                    }
+                                </code>
+                            </pre>
+                            <p>
+                                This populated validation array is then passed to our checkValidEntries function, this function summarises the validation by returning a boolean confirming the overall validity of the form.
+                            </p>
+                            <span class="explanation-title">Aggregating validation states</span>
+                            <p>
+                                We iterate through our $formValidation array, and for each form input we assign a $validationResults variable, which is computed by accessing the input's validation criteria array, and retrieving only the values of this array.
+                            </p>
+                            <pre>
+                                <code class="language-php">
+
+                                    //if email is the current $formValidation input being accessed
+
+                                    'email' => {
+                                        valid => false,
+                                        filled => true
+                                    }
+
+                                    //will have it's array values accessed and assigned like:
+
+                                    $validationResults = array(false, true);
+
+                                </code>
+                            </pre>
+                            <p>
+                                Using the $validationResults array we compute whether $allTestsPass by removing any duplicate entries and comparing it to an array containing only the value of true. If the $validationResults array contains anything but true values, they will not be removed by array_unique() and as such will assign false to our $allTestsPass variable.
+                            </p>
+                            <pre>
+                                <code class="language-php">
+
+                                    $validationResults = array(false, true);
+
+                                    //calling array_unique removes any duplicate array values and produces:
+
+                                    $validationResults = array(false, true);
+
+                                    $allTestsPass = array(false, true) === array(true);
+
+                                    $allTestsPass = false;
+
+                                </code>
+                            </pre>
+                            <p>
+                                We must handle form input with only single validation criteria differently, as calling array_values on an associative array of size 1 is not handled correctly by the function. We compute this by directly comparing the $validationResults to an array containing true, this assigns false if the test fails and true if it passes.
+                            </p>
+                            <p>
+                                Finally we combine these calculations to handle each form input's validation criteria by using either the multiple tests calculations to return false if any tests fail, or to use the single test calculation to do the same.
+                            </p>
+                            <p>
+                                If no formValidation criteria return false, we can assume that the form is valid and we may return true.
+                                It is worth noting here, that this solution could be improved by being written recursively, this would allow further nesting within our $formValidation array.
+                            </p>
+                            <span class="explanation-title">Generating the response object</span>
+                            <p>
+                                Having returned the form validation state to $validForm, we submit the valid form and set our $submitted variable, and can then encode each of $formValidation, $validForm and $submitted into JSON to be returned by the post request.
+                            </p>
+                            <p>
+                                This JSON object will become available from our Axios call if the POST request was successful, if the POST request fails, the response will either not contain the response object or the response object will list why failure occurs. In either case this can be handled by throwing an error to be caught and handled in our Axios call.
+                            </p>
+                        </details>
                     </article>
                 </div>
             </div>
