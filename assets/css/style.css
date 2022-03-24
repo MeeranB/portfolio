@@ -10369,7 +10369,7 @@ main {
 
 .project-card {
   background-size: cover;
-  background-position: bottom;
+  background-position: left bottom;
   background-repeat: no-repeat;
   opacity: 0.9;
   font-family: sans-serif;
@@ -10394,17 +10394,29 @@ main {
 .project-card:hover .project-card-content > *:not(.project-card-title), .project-card:focus-within .project-card-content > *:not(.project-card-title) {
   opacity: 1;
 }
+@media (max-width: 576px) {
+  .project-card {
+    background-position: top;
+  }
+}
 
 .netmatters-project-card {
   background-image: url(../../assets/images/netmatters-preview.png);
 }
+@media (max-width: 576px) {
+  .netmatters-project-card {
+    background-position: left top;
+  }
+}
 
 .arrays-project-card {
   background-image: url(../../assets/images/arrays-preview.png);
+  background-position: top;
 }
 
 .wp-project-card {
   background-image: url(../../assets/images/wp-preview.png);
+  background-position: top;
 }
 
 .project-card-content {
@@ -10451,6 +10463,11 @@ main {
   background-color: #674105;
   text-decoration: none;
   color: white;
+}
+@media (min-width: 321px) {
+  .button {
+    margin-top: 10px;
+  }
 }
 
 .projects-section-title {
