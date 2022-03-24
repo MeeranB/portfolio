@@ -32,7 +32,7 @@ include 'include/sidebar.php';
                                     A cross browser compatible replica of the Netmatters site, built using HTML, CSS with SASS and Javascript.
                                 </p>
                                 <a href="https://github.com/MeeranB/HTML-CSS-Reflection" class="button" target="_blank">View code</a>
-                                <a href="https://netmatters.meeran-bala-kumaran.netmatters-scs.co.uk/" class="button" target="_blank">View demo</a>
+                                <a href="http://netmatters.meeran-bala-kumaran.netmatters-scs.co.uk/" class="button" target="_blank">View demo</a>
                             </div>
                         </article>
                     </div>
@@ -46,7 +46,7 @@ include 'include/sidebar.php';
                                     An application that fetches random images from an API and allows users to save them to an email address.
                                 </p>
                                 <a href="https://github.com/MeeranB/JS-array" class="button" target="_blank">View code</a>
-                                <a href="https://meeran-bala-kumaran.netmatters-scs.co.uk/image-explorer" class="button" target="_blank">View demo</a>
+                                <a href="http://image-explorer.meeran-bala-kumaran.netmatters-scs.co.uk" class="button" target="_blank">View demo</a>
                             </div>
                         </article>
                     </div>
@@ -60,7 +60,7 @@ include 'include/sidebar.php';
                                     A site built with WordPress featuring a custom child theme, lightbox, and contact form.
                                 </p>
                                 <a href="https://github.com/MeeranB/wp-showcase" class="button" target="_blank">View code</a>
-                                <a href="https://wordpress.meeran-bala-kumaran.netmatters-scs.co.uk" class="button" target="_blank">View demo</a>
+                                <a href="http://wordpress.meeran-bala-kumaran.netmatters-scs.co.uk" class="button" target="_blank">View demo</a>
                             </div>
                         </article>
                     </div>
