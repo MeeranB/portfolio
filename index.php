@@ -23,7 +23,7 @@ include 'include/sidebar.php';
                 <h2 id="projects" class="projects-section-title">Projects</h2>
                 <div class="row project-card-section">
                     <div class="project-card-container col-12">
-                        <article class="project-card">
+                        <article class="project-card netmatters-project-card">
                             <div class="project-card-content">
                                 <h2 class="project-card-title">
                                     Netmatters Fascimile
@@ -33,6 +33,34 @@ include 'include/sidebar.php';
                                 </p>
                                 <a href="https://github.com/MeeranB/HTML-CSS-Reflection" class="button" target="_blank">View code</a>
                                 <a href="https://netmatters.meeran-bala-kumaran.netmatters-scs.co.uk/" class="button" target="_blank">View demo</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="project-card-container col-12">
+                        <article class="project-card arrays-project-card">
+                            <div class="project-card-content">
+                                <h2 class="project-card-title">
+                                    JavaScript Image Explorer
+                                </h2>
+                                <p class="project-card-body">
+                                    An application that fetches random images from an API and allows users to save them to an email address.
+                                </p>
+                                <a href="https://github.com/MeeranB/JS-array" class="button" target="_blank">View code</a>
+                                <a href="https://meeran-bala-kumaran.netmatters-scs.co.uk/image-explorer" class="button" target="_blank">View demo</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="project-card-container col-12">
+                        <article class="project-card wp-project-card">
+                            <div class="project-card-content">
+                                <h2 class="project-card-title">
+                                    Lorem Photography
+                                </h2>
+                                <p class="project-card-body">
+                                    A site built with WordPress featuring a custom child theme, lightbox, and contact form.
+                                </p>
+                                <a href="https://github.com/MeeranB/wp-showcase" class="button" target="_blank">View code</a>
+                                <a href="https://wordpress.meeran-bala-kumaran.netmatters-scs.co.uk" class="button" target="_blank">View demo</a>
                             </div>
                         </article>
                     </div>
