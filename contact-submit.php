@@ -39,7 +39,7 @@ function isValidEmail($email) {
 }
 
 try {
-    $dsn = "mysql:host=localhost;dbname=test;";
+    $dsn = "mysql:host=localhost:3306;dbname=meeranba_test;";
     $username = $_ENV['USERNAME'];
     $password = $_ENV['PASSWORD'];
     $db = new PDO($dsn, $username, $password);

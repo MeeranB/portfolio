@@ -131,14 +131,11 @@ typewriter
 
 $("#contact-form").validate({
     rules: {
-        name: "required",
+        fname: "required",
+        lname: "required",
         email: {
             required: true,
             validEmail: true,
-        },
-        telNumber: {
-            required: true,
-            validPhone: true,
         },
         subject: "required",
         message: "required",

@@ -28,7 +28,7 @@ include 'include/sidebar.php';
                                                 &lt;span class=&quot;card-icon icon-apps&quot;&gt;&lt;/span&gt;
                                             &lt;/div&gt;
                                             &lt;div class=&quot;info-title-container&quot;&gt;
-                                                &lt;span class=&quot;h2&quot;&gt;Bespoke Software&lt;/span&gt;
+                                                &lt;span class=&quot;h2&quot;&gt;IT Support&lt;/span&gt;
                                             &lt;/div&gt;
                                             &lt;div class=&quot;info-subtitle-container&quot;&gt;
                                                 &lt;span class=&quot;p&quot;&gt;
