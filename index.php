@@ -64,6 +64,19 @@ include 'include/sidebar.php';
                             </div>
                         </article>
                     </div>
+                    <div class="project-card-container col-12">
+                        <article class="project-card store-project-card">
+                            <div class="project-card-content">
+                                <h2 class="project-card-title">
+                                    WooCommerce Store
+                                </h2>
+                                <p class="project-card-body">
+                                    An ecommerce store with full checkout experience, built with SEO in mind.
+                                </p>
+                                <a href="http://meeran-bala-kumaran.netmatters-scs.co.uk/store" class="button" target="_blank">View demo</a>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
             <!-- /projects -->

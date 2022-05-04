@@ -10419,6 +10419,11 @@ main {
   background-position: top;
 }
 
+.store-project-card {
+  background-image: url(../../assets/images/store-preview.png);
+  background-position: top;
+}
+
 .project-card-content {
   --padding: 1.5rem;
   padding: var(--padding);
